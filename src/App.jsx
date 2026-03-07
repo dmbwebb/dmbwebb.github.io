@@ -1,0 +1,272 @@
+import './App.css'
+
+function LinkSep() {
+  return <span className="sep">|</span>
+}
+
+function PaperLinks({ links }) {
+  return (
+    <div className="paper__links">
+      {links.map((link, i) => (
+        <span key={i}>
+          {i > 0 && <LinkSep />}
+          <a href={link.href} target="_blank" rel="noopener noreferrer">
+            [{link.label}]
+          </a>
+        </span>
+      ))}
+    </div>
+  )
+}
+
+function CoverageLinks({ links }) {
+  if (!links || links.length === 0) return null
+  return (
+    <div className="paper__coverage">
+      Coverage:{' '}
+      {links.map((link, i) => (
+        <span key={i}>
+          {i > 0 && ' | '}
+          <a href={link.href} target="_blank" rel="noopener noreferrer">
+            {link.label}
+          </a>
+        </span>
+      ))}
+    </div>
+  )
+}
+
+function Paper({ title, href, venue, award, authors, links, coverage }) {
+  return (
+    <div className="paper">
+      <div className="paper__title">
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {title}
+        </a>
+      </div>
+      {venue && <div className="paper__venue">{venue}</div>}
+      {award && <div className="paper__award">{award}</div>}
+      {authors && <div className="paper__authors">{authors}</div>}
+      {links && links.length > 0 && <PaperLinks links={links} />}
+      {coverage && coverage.length > 0 && <CoverageLinks links={coverage} />}
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <div className="site">
+      {/* Header */}
+      <header className="header">
+        <nav className="header__nav">
+          <a href="#" className="header__name">Duncan Webb</a>
+          <ul className="header__links">
+            <li><a href="#research">Research</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="/papers/duncan_webb_cv_website.pdf" target="_blank">CV</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      {/* Hero / Bio */}
+      <section className="hero">
+        <div className="hero__photo-wrapper">
+          <img
+            src="/assets/headshot.jpg"
+            alt="Duncan Webb"
+            className="hero__photo"
+          />
+        </div>
+        <div className="hero__content">
+          <h1 className="hero__title">Duncan Webb</h1>
+          <p className="hero__subtitle">Assistant Professor of Economics</p>
+          <p className="hero__bio">
+            I am a development economist who uses tools and insights from
+            behavioural economics. My current projects focus on{' '}
+            <strong>discrimination</strong>, <strong>social change</strong>,
+            and <strong>human capital</strong>.
+          </p>
+          <p className="hero__bio">
+            I'm an Assistant Professor of Economics at{' '}
+            <a href="https://www.novasbe.unl.pt/en/" target="_blank" rel="noopener noreferrer">
+              Nova School of Business and Economics
+            </a>
+            . I recently spent a year as a postdoctoral researcher at Princeton
+            University, completed my PhD at the Paris School of Economics in
+            2024, and spent 2022-23 as a visiting scholar at MIT. I am a{' '}
+            <a href="https://www.povertyactionlab.org/" target="_blank" rel="noopener noreferrer">
+              J-PAL
+            </a>{' '}
+            Invited Researcher and a member of the{' '}
+            <a href="https://novafrica.org/" target="_blank" rel="noopener noreferrer">
+              NOVAFRICA
+            </a>{' '}
+            group.
+          </p>
+          <ul className="hero__contact">
+            <li>
+              <span className="contact-icon">&#9993;</span>
+              <a href="mailto:dmbwebb@gmail.com">dmbwebb@gmail.com</a>
+            </li>
+            <li>
+              <span className="contact-icon">&#128196;</span>
+              <a href="/papers/duncan_webb_cv_website.pdf" target="_blank">CV</a>
+            </li>
+            <li>
+              <span className="contact-icon">&#129419;</span>
+              <a href="https://bsky.app/profile/duncanwebb.bsky.social" target="_blank" rel="noopener noreferrer">
+                @duncanwebb
+              </a>
+            </li>
+            <li>
+              <span className="contact-icon">&#127970;</span>
+              B115B, Nova SBE
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Research */}
+      <section className="section" id="research">
+        <h2 className="section__title">Research</h2>
+
+        <h3 className="section__subtitle">Working Papers</h3>
+
+        <Paper
+          title="Silence to Solidarity: How Communication About a Minority Affects Discrimination"
+          href="/papers/WebbSilenceSolidarity.pdf"
+          venue="Accepted, Journal of Political Economy"
+          award="Winner of Weiss NEUDC Distinguished Paper 2023"
+          links={[
+            { label: 'Questionnaires', href: '/papers/WebbSilenceSolidaritySurveyMaterials.zip' },
+            { label: 'Archived Analyses', href: '/papers/WebbSilenceSolidarityArchived.pdf' },
+            { label: 'Replication Package', href: 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/UC27B9' },
+          ]}
+          coverage={[
+            { label: 'VoxDev', href: 'https://voxdev.org/topic/institutions-political-economy/can-conversations-about-minority-reduce-discrimination' },
+            { label: 'VoxTalks Economics', href: 'https://cepr.org/multimedia/next-generation-research' },
+            { label: 'Ideas of India Podcast', href: 'https://www.mercatus.org/ideasofindia/duncan-webb-reducing-anti-transgender-discrimination-india' },
+            { label: 'World Bank', href: 'https://blogs.worldbank.org/en/impactevaluations/can-conversations-between-discriminators-lead-less-discrimination-evidence-anti' },
+            { label: 'Ideas for India', href: 'https://www.ideasforindia.in/topics/social-identity/can-conversations-about-minorities-reduce-discrimination-evidence-from-anti-transgender-discrimination-in-chennai.html' },
+            { label: 'NewsLaundry', href: 'https://www.newslaundry.com/2025/02/28/miles-to-go-before-we-sleep-the-long-road-to-leadership-for-lgbtqia-professionals' },
+            { label: 'JPAL Summary', href: 'https://www.povertyactionlab.org/evaluation/impact-group-discussion-hiring-discrimination-against-transgender-workers-india' },
+          ]}
+        />
+
+        <Paper
+          title="Menstrual Stigma and Human Capital: Experimental Evidence from Madagascar"
+          href="/papers/StigmaHygieneMadagascar.pdf"
+          authors="with Karen Macours and Julieta Vera Rueda"
+          venue="CEPR Discussion Paper 21167, 2026"
+          links={[
+            { label: 'JPAL Summary', href: 'https://www.povertyactionlab.org/evaluation/addressing-menstrual-stigma-and-hygiene-improve-education-and-psychosocial-well-being' },
+            { label: 'FID', href: 'https://fundinnovation.dev/news/ameliorer-les-apprentissages-a-travers-une-approche-combinee-d-interventions-sur-l-hygiene-menstruelle' },
+            { label: 'VoxDev', href: 'https://voxdev.org/topic/health/improving-hygiene-reducing-menstrual-stigma-and-boosting-learning-schools' },
+            { label: 'CEPR', href: 'https://cepr.org/publications/dp21167' },
+          ]}
+        />
+
+        <Paper
+          title="Psychological Mechanisms for Measuring Preferences and Beliefs"
+          href="/papers/FriedmanOhWebbPsychMechs.pdf"
+          authors="with Evan Friedman and Suanna Oh"
+          links={[
+            { label: 'CESifo WP', href: 'https://www.ifo.de/sites/default/files/docbase/docs/cesifo1_wp11859.pdf' },
+            { label: 'Questionnaire', href: '/papers/PsychMechs_Questionnaire.pdf' },
+            { label: 'Questionnaire, Experiment 2', href: '/papers/PsychMechs_Questionnaire_Exp2.pdf' },
+          ]}
+        />
+
+        <h3 className="section__subtitle">Publications</h3>
+
+        <Paper
+          title="Critical Periods in Cognitive and Socioemotional Development: Evidence from Weather Shocks in Indonesia"
+          href="https://academic.oup.com/ej/advance-article-abstract/doi/10.1093/ej/uead105/7455874"
+          venue="The Economic Journal, 2024"
+          links={[
+            { label: 'Ungated', href: '/papers/WebbCriticalPeriodsAccepted.pdf' },
+          ]}
+        />
+
+        <Paper
+          title="COVID-19 spread, detection, and dynamics in Bogota, Colombia"
+          href="https://www.nature.com/articles/s41467-021-25038-z"
+          venue="Nature Communications, 2021"
+          authors="with Rachid Laajaj et al."
+          coverage={[
+            { label: 'Blu', href: 'https://www.bluradio.com/especiales/coronavirus/estudio-revela-alta-afectacion-del-covid-19-en-los-estratos-mas-bajos-de-bogota' },
+            { label: 'Caracol', href: 'https://caracol.com.co/radio/2021/08/25/salud/1629847144_391076.html' },
+            { label: 'Caracol 2', href: 'https://caracol.com.co/radio/2021/12/23/salud/1640299891_424471.html' },
+            { label: 'Nuevo Siglo', href: 'https://www.elnuevosiglo.com.co/articulos/04-15-2021-la-mitad-de-los-bogotanos-ya-se-contagio-de-covid-estudio-uniandes' },
+          ]}
+        />
+
+        <Paper
+          title="Understanding how socioeconomic inequalities drive inequalities in COVID-19 infections"
+          href="https://www.nature.com/articles/s41598-022-11706-7"
+          venue="Scientific Reports, 2022"
+          authors="with Rachid Laajaj et al."
+          coverage={[
+            { label: 'Espectador', href: 'https://blogs.elespectador.com/economia/desde-la-academia/cuantas-olas-tendra-la-pandemia-covid-19-colombia-unas-reflexiones-basadas-resultados-del-proyecto-covida-universidad-los-andes' },
+            { label: 'Blu', href: 'https://www.bluradio.com/especiales/coronavirus/estudio-revela-alta-afectacion-del-covid-19-en-los-estratos-mas-bajos-de-bogota' },
+          ]}
+        />
+      </section>
+
+      {/* Bits and Bobs */}
+      <section className="section" id="projects">
+        <h2 className="section__title">Bits and bobs</h2>
+        <ul className="projects-list">
+          <li className="project-item">
+            <a href="https://github.com/dmbwebb/dups" target="_blank" rel="noopener noreferrer" className="project-item__name">
+              dups
+            </a>
+            <span className="project-item__desc"> &mdash; an R package for dealing with duplicates</span>
+          </li>
+          <li className="project-item">
+            <a href="https://github.com/dmbwebb/trackr" target="_blank" rel="noopener noreferrer" className="project-item__name">
+              trackr
+            </a>
+            <span className="project-item__desc"> &mdash; an R package that helps you easily track the results of dplyr functions</span>
+          </li>
+          <li className="project-item">
+            <a href="https://github.com/dmbwebb/qval" target="_blank" rel="noopener noreferrer" className="project-item__name">
+              qval
+            </a>
+            <span className="project-item__desc">
+              {' '}&mdash; an R package that helps with multiple hypothesis testing by calculating FDR-adjusted p-values in the style of{' '}
+              <a href="https://www.tandfonline.com/doi/abs/10.1198/016214508000000841" target="_blank" rel="noopener noreferrer" className="project-item__ref">
+                Anderson (2008)
+              </a>
+            </span>
+          </li>
+          <li className="project-item">
+            <a href="https://dmbwebb.github.io/zenbot_v2/" target="_blank" rel="noopener noreferrer" className="project-item__name">
+              ZenBot
+            </a>
+            <span className="project-item__desc"> &mdash; a simple web app that generates customised guided meditations of any length</span>
+          </li>
+          <li className="project-item">
+            <a href="https://forum.effectivealtruism.org/posts/z2DkdXgPitqf98AvY/formalising-the-washing-out-hypothesis" target="_blank" rel="noopener noreferrer" className="project-item__name">
+              Longtermism
+            </a>
+            <span className="project-item__desc"> &mdash; a framework outlining the tradeoff faced when trying to affect the long-run future</span>
+          </li>
+          <li className="project-item">
+            <a href="https://open.substack.com/pub/duncanwebb/p/how-the-world-became-more-accepting?r=bc4om&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" target="_blank" rel="noopener noreferrer" className="project-item__name">
+              History of gay rights
+            </a>
+            <span className="project-item__desc"> &mdash; a blog post outlining how the world became more accepting of homosexuality</span>
+          </li>
+        </ul>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        &copy; {new Date().getFullYear()} Duncan Webb
+      </footer>
+    </div>
+  )
+}
+
+export default App
