@@ -6,12 +6,12 @@ function LinkSep() {
 
 function PaperLinks({ links }) {
   return (
-    <div className="paper__links">
+    <div className="paper__supplements">
       {links.map((link, i) => (
         <span key={i}>
-          {i > 0 && <LinkSep />}
+          {i > 0 && ' | '}
           <a href={link.href} target="_blank" rel="noopener noreferrer">
-            [{link.label}]
+            {link.label}
           </a>
         </span>
       ))}
@@ -70,16 +70,33 @@ function App() {
 
       {/* Hero / Bio */}
       <section className="hero">
-        <div className="hero__photo-wrapper">
+        <div className="hero__sidebar">
           <img
             src="/assets/headshot.jpg"
             alt="Duncan Webb"
             className="hero__photo"
           />
+          <ul className="hero__contact">
+            <li>
+              <svg className="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <a href="mailto:dmbwebb@gmail.com">dmbwebb@gmail.com</a>
+            </li>
+            <li>
+              <svg className="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <a href="/papers/duncan_webb_cv_website.pdf" target="_blank">CV</a>
+            </li>
+            <li>
+              <svg className="contact-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.6 6.463.785 2.878 3.593 3.614 6.29 3.232-.32.163-.636.33-.91.554-1.65 1.354-.794 3.048-.245 3.97 1.135 1.907 4.174 3.396 6.13 3.396h.27c1.955 0 4.994-1.49 6.13-3.396.548-.922 1.404-2.616-.246-3.97a5.07 5.07 0 0 0-.91-.554c2.698.382 5.506-.354 6.29-3.232.222-.814.6-5.774.6-6.463 0-.688-.138-1.86-.901-2.203-.66-.299-1.664-.621-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8z"/></svg>
+              <a href="https://bsky.app/profile/duncanwebb.bsky.social" target="_blank" rel="noopener noreferrer">@duncanwebb</a>
+            </li>
+            <li>
+              <svg className="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg>
+              <span>B115B, Nova SBE</span>
+            </li>
+          </ul>
         </div>
         <div className="hero__content">
           <h1 className="hero__title">Duncan Webb</h1>
-          <p className="hero__subtitle">Assistant Professor of Economics</p>
           <p className="hero__bio">
             I am a development economist who uses tools and insights from
             behavioural economics. My current projects focus on{' '}
@@ -103,26 +120,6 @@ function App() {
             </a>{' '}
             group.
           </p>
-          <ul className="hero__contact">
-            <li>
-              <span className="contact-icon">&#9993;</span>
-              <a href="mailto:dmbwebb@gmail.com">dmbwebb@gmail.com</a>
-            </li>
-            <li>
-              <span className="contact-icon">&#128196;</span>
-              <a href="/papers/duncan_webb_cv_website.pdf" target="_blank">CV</a>
-            </li>
-            <li>
-              <span className="contact-icon">&#129419;</span>
-              <a href="https://bsky.app/profile/duncanwebb.bsky.social" target="_blank" rel="noopener noreferrer">
-                @duncanwebb
-              </a>
-            </li>
-            <li>
-              <span className="contact-icon">&#127970;</span>
-              B115B, Nova SBE
-            </li>
-          </ul>
         </div>
       </section>
 
