@@ -36,6 +36,7 @@
 }
 
 .header__links a {
+  font-family: var(--font-serif);
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-secondary);
@@ -276,7 +277,6 @@
 
 .project-item__ref {
   color: var(--text-muted);
-  font-size: 0.85rem;
 }
 
 .project-item__ref a {
