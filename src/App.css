@@ -239,10 +239,6 @@
 }
 
 /* ===== Abstract Toggle ===== */
-.paper__abstract-wrapper {
-  margin-top: 0.15rem;
-}
-
 .paper__abstract-toggle {
   background: none;
   border: none;

@@ -1,25 +1,6 @@
 import { useState } from 'react'
 import './App.css'
 
-function LinkSep() {
-  return <span className="sep">|</span>
-}
-
-function PaperLinks({ links }) {
-  return (
-    <div className="paper__supplements">
-      {links.map((link, i) => (
-        <span key={i}>
-          {i > 0 && ' | '}
-          <a href={link.href} target="_blank" rel="noopener noreferrer">
-            {link.label}
-          </a>
-        </span>
-      ))}
-    </div>
-  )
-}
-
 function CoverageLinks({ links }) {
   if (!links || links.length === 0) return null
   return (
@@ -49,21 +30,34 @@ function Paper({ title, href, venue, award, authors, abstract, links, coverage }
       {venue && <div className="paper__venue">{venue}</div>}
       {award && <div className="paper__award">{award}</div>}
       {authors && <div className="paper__authors">{authors}</div>}
-      {abstract && (
-        <div className="paper__abstract-wrapper">
-          <button
-            className={`paper__abstract-toggle ${open ? 'paper__abstract-toggle--open' : ''}`}
-            onClick={() => setOpen(!open)}
-            aria-expanded={open}
-          >
-            Abstract
-          </button>
-          <div className={`paper__abstract ${open ? 'paper__abstract--open' : ''}`}>
-            <p>{abstract}</p>
-          </div>
+      {(abstract || (links && links.length > 0)) && (
+        <div className="paper__supplements">
+          {abstract && (
+            <span>
+              <button
+                className={`paper__abstract-toggle ${open ? 'paper__abstract-toggle--open' : ''}`}
+                onClick={() => setOpen(!open)}
+                aria-expanded={open}
+              >
+                Abstract
+              </button>
+            </span>
+          )}
+          {links && links.map((link, i) => (
+            <span key={i}>
+              {(i > 0 || abstract) && ' | '}
+              <a href={link.href} target="_blank" rel="noopener noreferrer">
+                {link.label}
+              </a>
+            </span>
+          ))}
         </div>
       )}
-      {links && links.length > 0 && <PaperLinks links={links} />}
+      {abstract && (
+        <div className={`paper__abstract ${open ? 'paper__abstract--open' : ''}`}>
+          <p>{abstract}</p>
+        </div>
+      )}
       {coverage && coverage.length > 0 && <CoverageLinks links={coverage} />}
     </div>
   )
