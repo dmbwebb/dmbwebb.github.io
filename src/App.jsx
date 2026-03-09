@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 
 function LinkSep() {
@@ -36,7 +37,8 @@ function CoverageLinks({ links }) {
   )
 }
 
-function Paper({ title, href, venue, award, authors, links, coverage }) {
+function Paper({ title, href, venue, award, authors, abstract, links, coverage }) {
+  const [open, setOpen] = useState(false)
   return (
     <div className="paper">
       <div className="paper__title">
@@ -47,6 +49,20 @@ function Paper({ title, href, venue, award, authors, links, coverage }) {
       {venue && <div className="paper__venue">{venue}</div>}
       {award && <div className="paper__award">{award}</div>}
       {authors && <div className="paper__authors">{authors}</div>}
+      {abstract && (
+        <div className="paper__abstract-wrapper">
+          <button
+            className={`paper__abstract-toggle ${open ? 'paper__abstract-toggle--open' : ''}`}
+            onClick={() => setOpen(!open)}
+            aria-expanded={open}
+          >
+            Abstract
+          </button>
+          <div className={`paper__abstract ${open ? 'paper__abstract--open' : ''}`}>
+            <p>{abstract}</p>
+          </div>
+        </div>
+      )}
       {links && links.length > 0 && <PaperLinks links={links} />}
       {coverage && coverage.length > 0 && <CoverageLinks links={coverage} />}
     </div>
@@ -134,6 +150,7 @@ function App() {
           href="/papers/WebbSilenceSolidarity.pdf"
           venue="Accepted, Journal of Political Economy"
           award="Winner of Weiss NEUDC Distinguished Paper 2023"
+          abstract="People predominantly talk within their identity groups. Conversations between majority-group members may therefore be crucial in shaping discrimination against minorities. In an experiment in India (N=3,397), non-transgender participants strongly discriminate against transgender workers when hiring for a grocery delivery, but a discussion with two non-transgender neighbors eliminates this discrimination in private post-discussion choices. The discussion is 1.7x more effective at reducing discrimination than information about transgender people's legal rights, and effects partially persist after 1 month. The evidence is consistent with norm-based persuasion, in which pro-transgender participants are more vocal and create a perceived anti-discriminatory norm that reduces subsequent discrimination."
           links={[
             { label: 'Questionnaires', href: '/papers/WebbSilenceSolidaritySurveyMaterials.zip' },
             { label: 'Archived Analyses', href: '/papers/WebbSilenceSolidarityArchived.pdf' },
@@ -155,6 +172,7 @@ function App() {
           href="/papers/StigmaHygieneMadagascar.pdf"
           authors="with Karen Macours and Julieta Vera Rueda"
           venue="CEPR Discussion Paper 21167, 2026"
+          abstract={`Menstrual stigma affects adolescent girls worldwide, yet its impact on human capital development remains largely unexamined. We use a field experiment in 140 schools in Madagascar to evaluate interventions designed to reduce menstrual stigma and promote hygiene behaviors (N=2,250). Teacher-led sensitization on stigma and hygiene, menstrual products, and sanitation infrastructure together substantially improve girls\u2019 learning outcomes on standardized tests (+0.2 SD). These gains do not operate by improving school attendance or health, the channels typically invoked to justify menstrual hygiene programs. Instead, the improvements appear to arise from psychosocial mechanisms, including reduced menstrual stigma (measured using lab-in-the-field exercises, enumerator observations, and self-reports) and reduced stress (lower heart rate). We also test a novel approach for norm change by identifying \u201Cpositive deviants\u201D \u2013 girls within schools willing to openly challenge menstrual stigma. Selecting and training these positive deviants to serve as peer ambassadors for norm change produces significant additional improvements in self-reported stigma and hygiene behavior. The results demonstrate that addressing gender-specific psychosocial barriers can substantially improve girls\u2019 education outcomes in highly deprived contexts, while highlighting both the promise and limitations of leveraging positive deviance for social norm change.`}
           links={[
             { label: 'JPAL Summary', href: 'https://www.povertyactionlab.org/evaluation/addressing-menstrual-stigma-and-hygiene-improve-education-and-psychosocial-well-being' },
             { label: 'FID', href: 'https://fundinnovation.dev/news/ameliorer-les-apprentissages-a-travers-une-approche-combinee-d-interventions-sur-l-hygiene-menstruelle' },
@@ -167,6 +185,7 @@ function App() {
           title="Psychological Mechanisms for Measuring Preferences and Beliefs"
           href="/papers/FriedmanOhWebbPsychMechs.pdf"
           authors="with Evan Friedman and Suanna Oh"
+          abstract="Accurately measuring preferences and beliefs in surveys is crucial for social science research, but standard monetary incentives cannot be used when responses cannot be verified. We study two psychological mechanisms for improving answer quality that can be applied to unverifiable questions: (i) an unexpected bonus payment designed to trigger reciprocity towards the researcher, and (ii) telling respondents that they will later be paid to accurately restate their previously-given answers, which could motivate careful initial answers that are naturally easier to reconstruct. In a large online experiment (N=2,428), the bonus method improves both answer correctness and consistency, and does so more effectively than dropping participants who fail an attention check. This effect is driven by increased effort and reciprocity. The restatement method, however, does not consistently improve answer quality, primarily because participants exert effort trying to memorize their answers instead of answering carefully. These results demonstrate the potential and limitations of using psychological mechanisms to improve the quality of survey responses."
           links={[
             { label: 'CESifo WP', href: 'https://www.ifo.de/sites/default/files/docbase/docs/cesifo1_wp11859.pdf' },
             { label: 'Questionnaire', href: '/papers/PsychMechs_Questionnaire.pdf' },
@@ -179,7 +198,8 @@ function App() {
         <Paper
           title="Critical Periods in Cognitive and Socioemotional Development: Evidence from Weather Shocks in Indonesia"
           href="https://academic.oup.com/ej/advance-article-abstract/doi/10.1093/ej/uead105/7455874"
-          venue="The Economic Journal, 2024"
+          venue="Economic Journal, 2024"
+          abstract={`Early life circumstances are important determinants of long-run human capital and wellbeing outcomes. The first 1000 days of life are often cited as a \u2018critical period\u2019 for child development, but this notion has rarely been directly tested. In a setting where children are potentially subject to shocks in every year of their childhood, I estimate the impact of early life weather shocks on adult cognitive and socioemotional outcomes for individuals born in rural Indonesia between 1988 and 2000. There is a strong critical period for these shocks at age 2 for cognitive development, but no evidence for a similar critical period for socioemotional development. The effects appear to be driven by changes in agricultural income and nutritional investment. The impacts are initially latent, only appearing after age 15. I show suggestive evidence for dynamic complementarity in early life investments.`}
           links={[
             { label: 'Ungated', href: '/papers/WebbCriticalPeriodsAccepted.pdf' },
           ]}
@@ -190,6 +210,7 @@ function App() {
           href="https://www.nature.com/articles/s41467-021-25038-z"
           venue="Nature Communications, 2021"
           authors="with Rachid Laajaj et al."
+          abstract="Latin America has been severely affected by the COVID-19 pandemic but estimations of rates of infections are very limited and lack the level of detail required to guide policy decisions. We implemented a COVID-19 sentinel surveillance study with 59,770 RT-PCR tests on mostly asymptomatic individuals and combine this data with administrative records on all detected cases to capture the spread and dynamics of the COVID-19 pandemic in Bogota from June 2020 to early March 2021. We find that, by March 2021, slightly more than half of the population in Bogota has been infected, despite only a small fraction of this population being detected. The initial buildup of immunity contributed to the containment of the pandemic in the first and second waves. We also show that the share of the population infected by March 2021 varies widely by occupation, socio-economic stratum, and location, which has affected the dynamics of the spread with different groups being infected in the two waves."
           coverage={[
             { label: 'Blu', href: 'https://www.bluradio.com/especiales/coronavirus/estudio-revela-alta-afectacion-del-covid-19-en-los-estratos-mas-bajos-de-bogota' },
             { label: 'Caracol', href: 'https://caracol.com.co/radio/2021/08/25/salud/1629847144_391076.html' },
@@ -203,6 +224,7 @@ function App() {
           href="https://www.nature.com/articles/s41598-022-11706-7"
           venue="Scientific Reports, 2022"
           authors="with Rachid Laajaj et al."
+          abstract={`Across the world, the COVID-19 pandemic has disproportionately affected economically disadvantaged groups. This differential impact has numerous possible explanations, each with significantly different policy implications. We examine, for the first time in a low- or middle-income country, which mechanisms best explain the disproportionate impact of the virus on the poor. Combining an epidemiological model with rich data from Bogot\u00E1, Colombia, we show that total infections and inequalities in infections are largely driven by inequalities in the ability to work remotely and in within-home secondary attack rates. Inequalities in isolation behavior are less important but non-negligible, while access to testing and contact-tracing plays practically no role because it is too slow to contain the virus. Interventions that mitigate transmission are often more effective when targeted on socioeconomically disadvantaged populations.`}
           coverage={[
             { label: 'Espectador', href: 'https://blogs.elespectador.com/economia/desde-la-academia/cuantas-olas-tendra-la-pandemia-covid-19-colombia-unas-reflexiones-basadas-resultados-del-proyecto-covida-universidad-los-andes' },
             { label: 'Blu', href: 'https://www.bluradio.com/especiales/coronavirus/estudio-revela-alta-afectacion-del-covid-19-en-los-estratos-mas-bajos-de-bogota' },

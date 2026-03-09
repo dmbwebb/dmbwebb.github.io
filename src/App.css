@@ -238,6 +238,54 @@
   color: var(--teal-600);
 }
 
+/* ===== Abstract Toggle ===== */
+.paper__abstract-wrapper {
+  margin-top: 0.15rem;
+}
+
+.paper__abstract-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.paper__abstract-toggle:hover {
+  color: var(--teal-600);
+}
+
+.paper__abstract {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.paper__abstract--open {
+  grid-template-rows: 1fr;
+}
+
+.paper__abstract > p {
+  overflow: hidden;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease, padding 0.3s ease;
+}
+
+.paper__abstract--open > p {
+  opacity: 1;
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+}
+
 /* ===== Projects / Bits & Bobs ===== */
 .projects-list {
   list-style: none;
