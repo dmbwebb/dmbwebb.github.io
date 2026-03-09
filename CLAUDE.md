@@ -10,7 +10,7 @@ npm run build    # Production build to dist/
 npm run deploy   # Build + deploy to gh-pages branch
 ```
 
-- **Deploying**: `git push origin main` does NOT deploy the site. GitHub Pages serves from the `gh-pages` branch. Always run `npm run deploy` after committing to actually deploy.
+- **Deploying**: `git push origin main` does NOT deploy the site. GitHub Pages serves from the `gh-pages` branch. Always run `npm run deploy` after pushing to actually deploy. When committing and pushing, always also run `npm run deploy`.
 - The `.github/workflows/deploy.yml` is inactive — Pages source is set to `gh-pages` branch, not GitHub Actions.
 
 ## Testing
