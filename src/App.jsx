@@ -164,7 +164,7 @@ function App() {
         <Paper
           title="Menstrual Stigma and Human Capital: Experimental Evidence from Madagascar"
           href="/papers/StigmaHygieneMadagascar.pdf"
-          authors="with Karen Macours and Julieta Vera Rueda"
+          authors={<>with <a href="https://www.parisschoolofeconomics.eu/en/persons/karen-macours/" target="_blank" rel="noopener noreferrer">Karen Macours</a> and <a href="https://sites.google.com/view/julieta-vera-rueda/" target="_blank" rel="noopener noreferrer">Julieta Vera Rueda</a></>}
           venue="CEPR Discussion Paper 21167, 2026"
           abstract={`Menstrual stigma affects adolescent girls worldwide, yet its impact on human capital development remains largely unexamined. We use a field experiment in 140 schools in Madagascar to evaluate interventions designed to reduce menstrual stigma and promote hygiene behaviors (N=2,250). Teacher-led sensitization on stigma and hygiene, menstrual products, and sanitation infrastructure together substantially improve girls\u2019 learning outcomes on standardized tests (+0.2 SD). These gains do not operate by improving school attendance or health, the channels typically invoked to justify menstrual hygiene programs. Instead, the improvements appear to arise from psychosocial mechanisms, including reduced menstrual stigma (measured using lab-in-the-field exercises, enumerator observations, and self-reports) and reduced stress (lower heart rate). We also test a novel approach for norm change by identifying \u201Cpositive deviants\u201D \u2013 girls within schools willing to openly challenge menstrual stigma. Selecting and training these positive deviants to serve as peer ambassadors for norm change produces significant additional improvements in self-reported stigma and hygiene behavior. The results demonstrate that addressing gender-specific psychosocial barriers can substantially improve girls\u2019 education outcomes in highly deprived contexts, while highlighting both the promise and limitations of leveraging positive deviance for social norm change.`}
           links={[
@@ -178,7 +178,7 @@ function App() {
         <Paper
           title="Psychological Mechanisms for Measuring Preferences and Beliefs"
           href="/papers/FriedmanOhWebbPsychMechs.pdf"
-          authors="with Evan Friedman and Suanna Oh"
+          authors={<>with <a href="https://www.evankfriedman.com/" target="_blank" rel="noopener noreferrer">Evan Friedman</a> and <a href="https://www.suannaoh.com/" target="_blank" rel="noopener noreferrer">Suanna Oh</a></>}
           abstract="Accurately measuring preferences and beliefs in surveys is crucial for social science research, but standard monetary incentives cannot be used when responses cannot be verified. We study two psychological mechanisms for improving answer quality that can be applied to unverifiable questions: (i) an unexpected bonus payment designed to trigger reciprocity towards the researcher, and (ii) telling respondents that they will later be paid to accurately restate their previously-given answers, which could motivate careful initial answers that are naturally easier to reconstruct. In a large online experiment (N=2,428), the bonus method improves both answer correctness and consistency, and does so more effectively than dropping participants who fail an attention check. This effect is driven by increased effort and reciprocity. The restatement method, however, does not consistently improve answer quality, primarily because participants exert effort trying to memorize their answers instead of answering carefully. These results demonstrate the potential and limitations of using psychological mechanisms to improve the quality of survey responses."
           links={[
             { label: 'CESifo WP', href: 'https://www.ifo.de/sites/default/files/docbase/docs/cesifo1_wp11859.pdf' },
@@ -203,7 +203,7 @@ function App() {
           title="COVID-19 spread, detection, and dynamics in Bogota, Colombia"
           href="https://www.nature.com/articles/s41467-021-25038-z"
           venue="Nature Communications, 2021"
-          authors="with Rachid Laajaj et al."
+          authors={<>with <a href="https://www.laajaj.com/" target="_blank" rel="noopener noreferrer">Rachid Laajaj</a> et al.</>}
           abstract="Latin America has been severely affected by the COVID-19 pandemic but estimations of rates of infections are very limited and lack the level of detail required to guide policy decisions. We implemented a COVID-19 sentinel surveillance study with 59,770 RT-PCR tests on mostly asymptomatic individuals and combine this data with administrative records on all detected cases to capture the spread and dynamics of the COVID-19 pandemic in Bogota from June 2020 to early March 2021. We find that, by March 2021, slightly more than half of the population in Bogota has been infected, despite only a small fraction of this population being detected. The initial buildup of immunity contributed to the containment of the pandemic in the first and second waves. We also show that the share of the population infected by March 2021 varies widely by occupation, socio-economic stratum, and location, which has affected the dynamics of the spread with different groups being infected in the two waves."
           coverage={[
             { label: 'Blu', href: 'https://www.bluradio.com/especiales/coronavirus/estudio-revela-alta-afectacion-del-covid-19-en-los-estratos-mas-bajos-de-bogota' },
@@ -217,7 +217,7 @@ function App() {
           title="Understanding how socioeconomic inequalities drive inequalities in COVID-19 infections"
           href="https://www.nature.com/articles/s41598-022-11706-7"
           venue="Scientific Reports, 2022"
-          authors="with Rachid Laajaj et al."
+          authors={<>with <a href="https://www.laajaj.com/" target="_blank" rel="noopener noreferrer">Rachid Laajaj</a> et al.</>}
           abstract={`Across the world, the COVID-19 pandemic has disproportionately affected economically disadvantaged groups. This differential impact has numerous possible explanations, each with significantly different policy implications. We examine, for the first time in a low- or middle-income country, which mechanisms best explain the disproportionate impact of the virus on the poor. Combining an epidemiological model with rich data from Bogot\u00E1, Colombia, we show that total infections and inequalities in infections are largely driven by inequalities in the ability to work remotely and in within-home secondary attack rates. Inequalities in isolation behavior are less important but non-negligible, while access to testing and contact-tracing plays practically no role because it is too slow to contain the virus. Interventions that mitigate transmission are often more effective when targeted on socioeconomically disadvantaged populations.`}
           coverage={[
             { label: 'Espectador', href: 'https://blogs.elespectador.com/economia/desde-la-academia/cuantas-olas-tendra-la-pandemia-covid-19-colombia-unas-reflexiones-basadas-resultados-del-proyecto-covida-universidad-los-andes' },
