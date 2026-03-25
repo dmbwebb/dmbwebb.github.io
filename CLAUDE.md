@@ -31,3 +31,16 @@ Always test extensively before committing:
 - `public/assets/` — Headshot, favicon
 - `public/CNAME` — Custom domain config
 - `.github/workflows/deploy.yml` — Auto-deploy on push to main
+
+## Deployment
+
+After running `npm run deploy`, always verify the live site in Chrome (via Claude-in-Chrome) by navigating to `www.duncan-webb.com` and confirming the changed text is visible. GitHub Pages CDN can take 1–5 min to propagate. Verification protocol:
+1. Check which JS bundle the page loaded (`Array.from(document.querySelectorAll('script[src]')).map(s=>s.src)`) and compare to the new bundle filename in `dist/assets/`.
+2. If the old bundle is still served, wait 60s and reload — keep checking every 60s until the new bundle loads and the changed text is confirmed in the DOM.
+3. Do not consider the task done until Chrome shows the correct text.
+
+## Lessons
+
+- Co-author links added (Laajaj, Macours, Vera Rueda, Friedman, Suanna Oh) — check `src/App.jsx` before adding new ones to avoid duplicates.
+- A PNG version of the D favicon lives in `public/assets/` for use on the Google Sites mirror — Google Sites does not accept `.ico` files.
+- Google Sites mirror still needs: favicon uploaded manually and site republished.
