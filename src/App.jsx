@@ -82,7 +82,7 @@ function App() {
       <section className="hero">
         <div className="hero__sidebar">
           <img
-            src="/assets/headshot.jpg"
+            src="/assets/headshot2.jpg"
             alt="Duncan Webb"
             className="hero__photo"
           />
@@ -226,9 +226,9 @@ function App() {
         />
       </section>
 
-      {/* Bits and Bobs */}
+      {/* Code & Other Writing */}
       <section className="section" id="projects">
-        <h2 className="section__title">Bits and bobs</h2>
+        <h2 className="section__title">Code &amp; other writing</h2>
         <ul className="projects-list">
           <li className="project-item">
             <a href="https://github.com/dmbwebb/dups" target="_blank" rel="noopener noreferrer" className="project-item__name">

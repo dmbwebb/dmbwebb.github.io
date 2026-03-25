@@ -23,9 +23,9 @@ describe('App renders all sections', () => {
     expect(screen.getByText(/publications/i)).toBeInTheDocument()
   })
 
-  it('renders Bits and bobs section', () => {
+  it('renders Code & other writing section', () => {
     render(<App />)
-    expect(screen.getByRole('heading', { name: /bits and bobs/i })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: /code & other writing/i })).toBeInTheDocument()
   })
 })
 
@@ -136,7 +136,7 @@ describe('Publications', () => {
   })
 })
 
-describe('Bits and bobs', () => {
+describe('Code & other writing', () => {
   it('renders dups link', () => {
     render(<App />)
     const link = screen.getByRole('link', { name: /^dups$/i })
