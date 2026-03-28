@@ -72,6 +72,7 @@ function App() {
           <a href="#" className="header__name">Duncan Webb</a>
           <ul className="header__links">
             <li><a href="#research">Research</a></li>
+            <li><a href="#teaching">Teaching</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="/papers/duncan_webb_cv_website.pdf" target="_blank">CV</a></li>
           </ul>
@@ -224,6 +225,35 @@ function App() {
             { label: 'Blu', href: 'https://www.bluradio.com/especiales/coronavirus/estudio-revela-alta-afectacion-del-covid-19-en-los-estratos-mas-bajos-de-bogota' },
           ]}
         />
+      </section>
+
+      {/* Teaching */}
+      <section className="section" id="teaching">
+        <h2 className="section__title">Teaching</h2>
+        <ul className="projects-list">
+          <li className="project-item">
+            <span className="project-item__name" style={{ textDecoration: 'none', cursor: 'default' }}>
+              Development Economics
+            </span>
+            <span className="project-item__desc">
+              {' '}&mdash; Masters, Nova SBE, Spring 2026.{' '}
+              <a href="/papers/development_economics_syllabus.pdf" target="_blank" rel="noopener noreferrer" className="project-item__ref">
+                Syllabus
+              </a>
+            </span>
+          </li>
+          <li className="project-item">
+            <span className="project-item__name" style={{ textDecoration: 'none', cursor: 'default' }}>
+              Econometrics
+            </span>
+            <span className="project-item__desc">
+              {' '}&mdash; PhD, Nova SBE, Spring 2026.{' '}
+              <a href="/papers/phd_econometrics_syllabus.pdf" target="_blank" rel="noopener noreferrer" className="project-item__ref">
+                Syllabus
+              </a>
+            </span>
+          </li>
+        </ul>
       </section>
 
       {/* Code & Other Writing */}

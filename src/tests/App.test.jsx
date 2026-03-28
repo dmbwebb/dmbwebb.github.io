@@ -23,6 +23,11 @@ describe('App renders all sections', () => {
     expect(screen.getByText(/publications/i)).toBeInTheDocument()
   })
 
+  it('renders Teaching section', () => {
+    render(<App />)
+    expect(screen.getByRole('heading', { name: /^teaching$/i })).toBeInTheDocument()
+  })
+
   it('renders Code & other writing section', () => {
     render(<App />)
     expect(screen.getByRole('heading', { name: /code & other writing/i })).toBeInTheDocument()
@@ -133,6 +138,22 @@ describe('Publications', () => {
     render(<App />)
     const link = screen.getByRole('link', { name: /socioeconomic inequalities/i })
     expect(link).toHaveAttribute('href', 'https://www.nature.com/articles/s41598-022-11706-7')
+  })
+})
+
+describe('Teaching', () => {
+  it('renders Development Economics with syllabus link', () => {
+    render(<App />)
+    expect(screen.getByText('Development Economics')).toBeInTheDocument()
+    const links = screen.getAllByRole('link', { name: /syllabus/i })
+    expect(links.find(l => l.getAttribute('href') === '/papers/development_economics_syllabus.pdf')).toBeTruthy()
+  })
+
+  it('renders Econometrics with syllabus link', () => {
+    render(<App />)
+    expect(screen.getByText('Econometrics')).toBeInTheDocument()
+    const links = screen.getAllByRole('link', { name: /syllabus/i })
+    expect(links.find(l => l.getAttribute('href') === '/papers/phd_econometrics_syllabus.pdf')).toBeTruthy()
   })
 })
 
