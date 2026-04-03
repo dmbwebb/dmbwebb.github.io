@@ -12,15 +12,15 @@
 }
 
 .header__name {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: var(--teal-700);
+  color: var(--teal);
   text-decoration: none;
+  letter-spacing: -0.01em;
 }
 
 .header__name:hover {
-  color: var(--teal-500);
+  color: var(--teal-hover);
 }
 
 .header__nav {
@@ -36,7 +36,6 @@
 }
 
 .header__links a {
-  font-family: var(--font-serif);
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-secondary);
@@ -44,7 +43,7 @@
 }
 
 .header__links a:hover {
-  color: var(--teal-700);
+  color: var(--teal);
 }
 
 /* ===== Hero / Bio ===== */
@@ -69,8 +68,8 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: center 15%;
-  border: 4px solid var(--teal-100);
-  box-shadow: 0 4px 20px rgba(45, 106, 106, 0.1);
+  border: 4px solid var(--teal-border);
+  box-shadow: 0 4px 20px rgba(45, 106, 106, 0.08);
 }
 
 .hero__contact {
@@ -96,7 +95,7 @@
 }
 
 .hero__contact a:hover {
-  color: var(--teal-700);
+  color: var(--teal);
 }
 
 .contact-icon {
@@ -112,18 +111,18 @@
 }
 
 .hero__title {
-  font-family: var(--font-serif);
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: var(--teal-900);
+  color: var(--text-primary);
   margin-bottom: 1rem;
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .hero__bio {
-  font-size: 0.93rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 1.75;
+  line-height: 1.7;
   margin-bottom: 1rem;
 }
 
@@ -134,16 +133,15 @@
 }
 
 .section__title {
-  font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--teal-700);
+  color: var(--text-primary);
   margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
 }
 
 .section__subtitle {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-secondary);
   margin-top: 2rem;
@@ -158,24 +156,23 @@
 .paper {
   margin-bottom: 1.75rem;
   padding-left: 1rem;
-  border-left: 3px solid var(--teal-100);
+  border-left: 3px solid var(--teal-border);
   transition: border-color 0.2s ease;
 }
 
 .paper:hover {
-  border-left-color: var(--teal-500);
+  border-left-color: var(--teal);
 }
 
 .paper__title {
-  font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
   line-height: 1.4;
   display: inline;
 }
 
 .paper__title a {
-  color: var(--teal-700);
+  color: var(--teal);
   text-decoration: underline;
   text-decoration-color: rgba(45, 106, 106, 0.25);
   text-underline-offset: 2px;
@@ -183,25 +180,25 @@
 }
 
 .paper__title a:hover {
-  text-decoration-color: var(--teal-500);
-  color: var(--teal-500);
+  text-decoration-color: var(--teal-hover);
+  color: var(--teal-hover);
 }
 
 .paper__venue {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-primary);
   margin-top: 0.2rem;
 }
 
 .paper__award {
-  font-size: 0.9rem;
-  color: var(--teal-600);
+  font-size: 0.88rem;
+  color: var(--teal);
   margin-top: 0.1rem;
 }
 
 .paper__authors {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   margin-top: 0.15rem;
 }
@@ -218,7 +215,7 @@
 }
 
 .paper__supplements a:hover {
-  color: var(--teal-600);
+  color: var(--teal);
 }
 
 .paper__coverage {
@@ -233,7 +230,7 @@
 }
 
 .paper__coverage a:hover {
-  color: var(--teal-600);
+  color: var(--teal);
 }
 
 /* ===== Abstract Toggle ===== */
@@ -250,7 +247,7 @@
 }
 
 .paper__abstract-toggle:hover {
-  color: var(--teal-600);
+  color: var(--teal);
 }
 
 .paper__abstract {
@@ -291,30 +288,30 @@
 
 .project-item {
   padding-left: 1rem;
-  border-left: 3px solid var(--teal-100);
+  border-left: 3px solid var(--teal-border);
   transition: border-color 0.2s ease;
   line-height: 1.6;
 }
 
 .project-item:hover {
-  border-left-color: var(--teal-500);
+  border-left-color: var(--teal);
 }
 
 .project-item__name {
   font-weight: 600;
-  color: var(--teal-700);
+  color: var(--teal);
   text-decoration: underline;
   text-decoration-color: rgba(45, 106, 106, 0.25);
   text-underline-offset: 2px;
 }
 
 .project-item__name:hover {
-  text-decoration-color: var(--teal-500);
+  text-decoration-color: var(--teal-hover);
 }
 
 .project-item__desc {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .project-item__ref {
@@ -326,7 +323,7 @@
 }
 
 .project-item__ref a:hover {
-  color: var(--teal-600);
+  color: var(--teal);
 }
 
 /* ===== Footer ===== */
@@ -363,7 +360,7 @@
   }
 
   .hero__title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
   .hero__contact {
@@ -379,7 +376,7 @@
   }
 
   .section__title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -390,7 +387,7 @@
   }
 
   .hero__title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .paper {
