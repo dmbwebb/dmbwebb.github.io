@@ -30,7 +30,7 @@ Always test extensively before committing:
 - `public/papers/` — Locally hosted PDFs
 - `public/assets/` — Headshot, favicon
 - `public/CNAME` — Custom domain config
-- `.github/workflows/deploy.yml` — Auto-deploy on push to main
+- `.github/workflows/deploy.yml` — Exists but **inactive**; Pages serves from `gh-pages` branch, not Actions
 
 ## Deployment
 
@@ -44,3 +44,5 @@ After running `npm run deploy`, always verify the live site in Chrome (via Claud
 - Co-author links added (Laajaj, Macours, Vera Rueda, Friedman, Suanna Oh) — check `src/App.jsx` before adding new ones to avoid duplicates.
 - A PNG version of the D favicon lives in `public/assets/` for use on the Google Sites mirror — Google Sites does not accept `.ico` files.
 - Google Sites mirror still needs: favicon uploaded manually and site republished.
+- When adding coauthor links, verify every URL before deploying — academic homepages move frequently (Stanford→Google Sites, Google Sites→Harvard, etc). Use parallel subagents for speed.
+- `wip_draft.md` is a scratch file for drafting website content — don't commit it.

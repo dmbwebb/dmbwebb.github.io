@@ -23,9 +23,13 @@ function Paper({ title, href, venue, award, authors, abstract, links, coverage }
   return (
     <div className="paper">
       <div className="paper__title">
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          {title}
-        </a>
+        {href ? (
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            {title}
+          </a>
+        ) : (
+          <span>{title}</span>
+        )}
       </div>
       {venue && <div className="paper__venue">{venue}</div>}
       {award && <div className="paper__award">{award}</div>}
@@ -224,6 +228,27 @@ function App() {
             { label: 'Espectador', href: 'https://blogs.elespectador.com/economia/desde-la-academia/cuantas-olas-tendra-la-pandemia-covid-19-colombia-unas-reflexiones-basadas-resultados-del-proyecto-covida-universidad-los-andes' },
             { label: 'Blu', href: 'https://www.bluradio.com/especiales/coronavirus/estudio-revela-alta-afectacion-del-covid-19-en-los-estratos-mas-bajos-de-bogota' },
           ]}
+        />
+        <h3 className="section__subtitle">Selected Work in Progress</h3>
+
+        <Paper
+          title="AI-Powered Community Health Screening: Adoption, Integration, and Health Care Demand in Rural India"
+          authors={<>with <a href="https://sites.google.com/view/patrickagte" target="_blank" rel="noopener noreferrer">Patrick Agte</a> and <a href="https://sites.google.com/view/pascaline-dupas/home" target="_blank" rel="noopener noreferrer">Pascaline Dupas</a></>}
+        />
+
+        <Paper
+          title="Hygiene Infrastructure & Menstrual Stigma"
+          authors={<>with Oscar Diaz, Mariachiara Iannuzzi, and <a href="https://www.parisschoolofeconomics.eu/en/persons/karen-macours/" target="_blank" rel="noopener noreferrer">Karen Macours</a></>}
+        />
+
+        <Paper
+          title="Parental Coaching to Improve Adolescent Smartphone Habits in Colombia"
+          authors={<>with <a href="https://jcurrie.scholar.princeton.edu/" target="_blank" rel="noopener noreferrer">Janet Currie</a>, Oscar Diaz, <a href="https://www.hks.harvard.edu/faculty/juan-saavedra" target="_blank" rel="noopener noreferrer">Juan Saavedra</a>, and <a href="https://economics.mit.edu/people/faculty/frank-schilbach" target="_blank" rel="noopener noreferrer">Frank Schilbach</a></>}
+        />
+
+        <Paper
+          title="Do Psychosocial Interventions Fade Out? Evidence from 1513 Meta-Analyses"
+          authors={<>with <a href="https://evavivalt.com/" target="_blank" rel="noopener noreferrer">Eva Vivalt</a></>}
         />
       </section>
 
