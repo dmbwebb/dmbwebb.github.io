@@ -7,9 +7,9 @@
 }
 
 :root {
-  --teal: #2d6a6a;
-  --teal-hover: #3d8888;
-  --teal-border: #d5e5e4;
+  --accent: #374151;
+  --accent-hover: #111827;
+  --accent-border: #e5e7eb;
 
   --text-primary: #1e293b;
   --text-secondary: #475569;
@@ -37,13 +37,13 @@ body {
 }
 
 a {
-  color: var(--teal);
+  color: var(--accent);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 a:hover {
-  color: var(--teal-hover);
+  color: var(--accent-hover);
 }
 
 img {

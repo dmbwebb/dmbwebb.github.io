@@ -14,13 +14,13 @@
 .header__name {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--teal);
+  color: var(--accent);
   text-decoration: none;
   letter-spacing: -0.01em;
 }
 
 .header__name:hover {
-  color: var(--teal-hover);
+  color: var(--accent-hover);
 }
 
 .header__nav {
@@ -43,7 +43,7 @@
 }
 
 .header__links a:hover {
-  color: var(--teal);
+  color: var(--accent);
 }
 
 /* ===== Hero / Bio ===== */
@@ -68,8 +68,8 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: center 15%;
-  border: 4px solid var(--teal-border);
-  box-shadow: 0 4px 20px rgba(45, 106, 106, 0.08);
+  border: 4px solid var(--accent-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .hero__contact {
@@ -95,7 +95,7 @@
 }
 
 .hero__contact a:hover {
-  color: var(--teal);
+  color: var(--accent);
 }
 
 .contact-icon {
@@ -156,12 +156,12 @@
 .paper {
   margin-bottom: 1.75rem;
   padding-left: 1rem;
-  border-left: 3px solid var(--teal-border);
+  border-left: 3px solid var(--accent-border);
   transition: border-color 0.2s ease;
 }
 
 .paper:hover {
-  border-left-color: var(--teal);
+  border-left-color: var(--accent);
 }
 
 .paper__title {
@@ -172,16 +172,16 @@
 }
 
 .paper__title a {
-  color: var(--teal);
+  color: var(--accent);
   text-decoration: underline;
-  text-decoration-color: rgba(45, 106, 106, 0.25);
+  text-decoration-color: rgba(55, 65, 81, 0.25);
   text-underline-offset: 2px;
   transition: text-decoration-color 0.2s ease, color 0.2s ease;
 }
 
 .paper__title a:hover {
-  text-decoration-color: var(--teal-hover);
-  color: var(--teal-hover);
+  text-decoration-color: var(--accent-hover);
+  color: var(--accent-hover);
 }
 
 .paper__venue {
@@ -193,7 +193,7 @@
 
 .paper__award {
   font-size: 0.88rem;
-  color: var(--teal);
+  color: var(--accent);
   margin-top: 0.1rem;
 }
 
@@ -215,7 +215,7 @@
 }
 
 .paper__supplements a:hover {
-  color: var(--teal);
+  color: var(--accent);
 }
 
 .paper__coverage {
@@ -230,7 +230,7 @@
 }
 
 .paper__coverage a:hover {
-  color: var(--teal);
+  color: var(--accent);
 }
 
 /* ===== Abstract Toggle ===== */
@@ -247,7 +247,7 @@
 }
 
 .paper__abstract-toggle:hover {
-  color: var(--teal);
+  color: var(--accent);
 }
 
 .paper__abstract {
@@ -288,25 +288,25 @@
 
 .project-item {
   padding-left: 1rem;
-  border-left: 3px solid var(--teal-border);
+  border-left: 3px solid var(--accent-border);
   transition: border-color 0.2s ease;
   line-height: 1.6;
 }
 
 .project-item:hover {
-  border-left-color: var(--teal);
+  border-left-color: var(--accent);
 }
 
 .project-item__name {
   font-weight: 600;
-  color: var(--teal);
+  color: var(--accent);
   text-decoration: underline;
-  text-decoration-color: rgba(45, 106, 106, 0.25);
+  text-decoration-color: rgba(55, 65, 81, 0.25);
   text-underline-offset: 2px;
 }
 
 .project-item__name:hover {
-  text-decoration-color: var(--teal-hover);
+  text-decoration-color: var(--accent-hover);
 }
 
 .project-item__desc {
@@ -323,7 +323,7 @@
 }
 
 .project-item__ref a:hover {
-  color: var(--teal);
+  color: var(--accent);
 }
 
 /* ===== Footer ===== */
