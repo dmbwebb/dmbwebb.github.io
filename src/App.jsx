@@ -115,7 +115,7 @@ function App() {
           <p className="hero__bio">
             I am a development economist who uses tools and insights from
             behavioural economics. My current projects focus on{' '}
-            <strong>discrimination</strong>, <strong>social change</strong>,
+            <strong>social change</strong>, <strong>gender</strong>,
             and <strong>human capital</strong>.
           </p>
           <p className="hero__bio">
@@ -257,25 +257,19 @@ function App() {
         <h2 className="section__title">Teaching</h2>
         <ul className="projects-list">
           <li className="project-item">
-            <span className="project-item__name" style={{ textDecoration: 'none', cursor: 'default' }}>
+            <a href="/papers/development_economics_syllabus.pdf" target="_blank" rel="noopener noreferrer" className="project-item__name" style={{ textDecoration: 'underline', cursor: 'pointer' }}>
               Development Economics
-            </span>
+            </a>
             <span className="project-item__desc">
-              {' '}&mdash; Masters, Nova SBE, Spring 2026.{' '}
-              <a href="/papers/development_economics_syllabus.pdf" target="_blank" rel="noopener noreferrer" className="project-item__ref">
-                Syllabus
-              </a>
+              {' '}&mdash; Masters, Nova SBE, Spring 2026.
             </span>
           </li>
           <li className="project-item">
-            <span className="project-item__name" style={{ textDecoration: 'none', cursor: 'default' }}>
+            <a href="/papers/phd_econometrics_syllabus.pdf" target="_blank" rel="noopener noreferrer" className="project-item__name" style={{ textDecoration: 'underline', cursor: 'pointer' }}>
               Econometrics
-            </span>
+            </a>
             <span className="project-item__desc">
-              {' '}&mdash; PhD, Nova SBE, Spring 2026.{' '}
-              <a href="/papers/phd_econometrics_syllabus.pdf" target="_blank" rel="noopener noreferrer" className="project-item__ref">
-                Syllabus
-              </a>
+              {' '}&mdash; PhD, Nova SBE, Spring 2026.
             </span>
           </li>
         </ul>
