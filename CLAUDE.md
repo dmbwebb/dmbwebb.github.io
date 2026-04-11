@@ -39,6 +39,16 @@ After running `npm run deploy`, always verify the live site in Chrome (via Claud
 2. If the old bundle is still served, wait 60s and reload — keep checking every 60s until the new bundle loads and the changed text is confirmed in the DOM.
 3. Do not consider the task done until Chrome shows the correct text.
 
+## Type scale
+
+The site uses a strict 4-tier scale — do not introduce new sizes when adding sections:
+- **2.2rem** — `.hero__title` only (display)
+- **1.8rem** — `.section__title` (H2)
+- **1.2rem** — emphasis tier: `.header__name`, `.hero__bio`, `.section__subtitle`, `.paper__title`
+- **1.05rem** — body tier: everything else (`.project-item`, `.paper__authors`, `.paper__venue`, `.header__links a`, `.footer`, etc.)
+
+Responsive overrides for `.hero__title` (1.7rem @ 768px, 1.4rem @ 480px) and `.section__title` (1.55rem @ 768px) are the only exceptions.
+
 ## Lessons
 
 - Co-author links added (Laajaj, Macours, Vera Rueda, Friedman, Suanna Oh) — check `src/App.jsx` before adding new ones to avoid duplicates.
