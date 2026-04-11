@@ -287,6 +287,7 @@
 }
 
 .project-item {
+  font-size: 1.05rem;
   padding-left: 1rem;
   border-left: 3px solid var(--accent-border);
   transition: border-color 0.2s ease;
@@ -311,7 +312,6 @@
 
 .project-item__desc {
   color: var(--text-secondary);
-  font-size: 1.08rem;
 }
 
 .project-item__ref {
