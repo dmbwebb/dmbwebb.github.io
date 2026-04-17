@@ -120,7 +120,7 @@
 }
 
 .hero__bio {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 1rem;
@@ -165,7 +165,7 @@
 }
 
 .paper__title {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 600;
   line-height: 1.4;
   display: inline;

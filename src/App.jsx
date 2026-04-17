@@ -232,12 +232,12 @@ function App() {
         <h3 className="section__subtitle">Selected Work in Progress</h3>
 
         <Paper
-          title="AI-Powered Community Health Screening: Adoption, Integration, and Health Care Demand in Rural India"
+          title="AI-Assisted Screening and Health Care Demand in India"
           authors={<>with <a href="https://sites.google.com/view/patrickagte" target="_blank" rel="noopener noreferrer">Patrick Agte</a> and <a href="https://sites.google.com/view/pascaline-dupas/home" target="_blank" rel="noopener noreferrer">Pascaline Dupas</a></>}
         />
 
         <Paper
-          title="Hygiene Infrastructure & Menstrual Stigma"
+          title="Stress, Stigma, and Learning in Madagascar"
           authors={<>with Oscar Diaz, Mariachiara Iannuzzi, and <a href="https://www.parisschoolofeconomics.eu/en/persons/karen-macours/" target="_blank" rel="noopener noreferrer">Karen Macours</a></>}
         />
 
@@ -247,7 +247,7 @@ function App() {
         />
 
         <Paper
-          title="Do Psychosocial Interventions Fade Out? Evidence from 1513 Meta-Analyses"
+          title="How Persistent Are the Impacts of Global Education and Health Interventions? Evidence from 1513 Meta-Analyses"
           authors={<>with <a href="https://evavivalt.com/" target="_blank" rel="noopener noreferrer">Eva Vivalt</a></>}
         />
       </section>
