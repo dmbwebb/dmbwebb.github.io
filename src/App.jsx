@@ -77,7 +77,6 @@ function App() {
           <ul className="header__links">
             <li><a href="#research">Research</a></li>
             <li><a href="#teaching">Teaching</a></li>
-            <li><a href="#projects">Projects</a></li>
             <li><a href="/papers/duncan_webb_cv_website.pdf" target="_blank">CV</a></li>
           </ul>
         </nav>

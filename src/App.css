@@ -17,6 +17,8 @@
   color: var(--accent);
   text-decoration: none;
   letter-spacing: -0.01em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .header__name:hover {
@@ -27,12 +29,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .header__links {
   display: flex;
   gap: 2rem;
   list-style: none;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .header__links a {
@@ -392,5 +398,21 @@
 
   .paper {
     padding-left: 0.75rem;
+  }
+
+  .header {
+    padding: 1rem 0;
+  }
+
+  .header__name {
+    font-size: 1.1rem;
+  }
+
+  .header__links {
+    gap: 1rem;
+  }
+
+  .header__links a {
+    font-size: 0.95rem;
   }
 }
