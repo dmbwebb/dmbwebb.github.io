@@ -162,6 +162,7 @@ function App() {
             { label: 'Ideas for India', href: 'https://www.ideasforindia.in/topics/social-identity/can-conversations-about-minorities-reduce-discrimination-evidence-from-anti-transgender-discrimination-in-chennai.html' },
             { label: 'NewsLaundry', href: 'https://www.newslaundry.com/2025/02/28/miles-to-go-before-we-sleep-the-long-road-to-leadership-for-lgbtqia-professionals' },
             { label: 'JPAL Summary', href: 'https://www.povertyactionlab.org/evaluation/impact-group-discussion-hiring-discrimination-against-transgender-workers-india' },
+            { label: 'Público', href: 'https://www.publico.pt/2026/04/30/p3/noticia/pos-vizinhos-conversar-pessoas-trans-india-diminuiu-preconceito-2172839' },
           ]}
         />
 
