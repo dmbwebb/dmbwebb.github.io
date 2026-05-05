@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import App from '../App'
 
 describe('App renders all sections', () => {
@@ -61,7 +61,7 @@ describe('Bio content', () => {
   it('renders headshot image', () => {
     render(<App />)
     const img = screen.getByAltText(/duncan webb/i)
-    expect(img).toHaveAttribute('src', '/assets/headshot.jpg')
+    expect(img).toHaveAttribute('src', '/assets/headshot2.jpg')
   })
 })
 
@@ -121,6 +121,54 @@ describe('Working papers', () => {
   })
 })
 
+describe('Paper expandable links', () => {
+  it('hides supplemental and coverage links until More is expanded', () => {
+    render(<App />)
+
+    expect(screen.queryByRole('link', { name: /questionnaires/i })).not.toBeInTheDocument()
+    expect(screen.queryByRole('link', { name: /voxdev/i })).not.toBeInTheDocument()
+
+    fireEvent.click(screen.getAllByRole('button', { name: /^more$/i })[0])
+
+    expect(screen.getByRole('link', { name: /questionnaires/i })).toHaveAttribute(
+      'href',
+      '/papers/WebbSilenceSolidaritySurveyMaterials.zip',
+    )
+    expect(screen.getByRole('link', { name: /voxdev/i })).toHaveAttribute(
+      'href',
+      'https://voxdev.org/topic/institutions-political-economy/can-conversations-about-minority-reduce-discrimination',
+    )
+  })
+
+  it('closes More when Abstract is opened on the same paper', () => {
+    render(<App />)
+    const abstractButton = screen.getAllByRole('button', { name: /^abstract$/i })[0]
+    const moreButton = screen.getAllByRole('button', { name: /^more$/i })[0]
+
+    fireEvent.click(moreButton)
+    expect(moreButton).toHaveAttribute('aria-expanded', 'true')
+    expect(screen.getByRole('link', { name: /questionnaires/i })).toBeInTheDocument()
+
+    fireEvent.click(abstractButton)
+    expect(abstractButton).toHaveAttribute('aria-expanded', 'true')
+    expect(moreButton).toHaveAttribute('aria-expanded', 'false')
+    expect(screen.queryByRole('link', { name: /questionnaires/i })).not.toBeInTheDocument()
+  })
+
+  it('closes Abstract when More is opened on the same paper', () => {
+    render(<App />)
+    const abstractButton = screen.getAllByRole('button', { name: /^abstract$/i })[0]
+    const moreButton = screen.getAllByRole('button', { name: /^more$/i })[0]
+
+    fireEvent.click(abstractButton)
+    expect(abstractButton).toHaveAttribute('aria-expanded', 'true')
+
+    fireEvent.click(moreButton)
+    expect(moreButton).toHaveAttribute('aria-expanded', 'true')
+    expect(abstractButton).toHaveAttribute('aria-expanded', 'false')
+  })
+})
+
 describe('Publications', () => {
   it('renders Critical Periods paper', () => {
     render(<App />)
@@ -144,16 +192,14 @@ describe('Publications', () => {
 describe('Teaching', () => {
   it('renders Development Economics with syllabus link', () => {
     render(<App />)
-    expect(screen.getByText('Development Economics')).toBeInTheDocument()
-    const links = screen.getAllByRole('link', { name: /syllabus/i })
-    expect(links.find(l => l.getAttribute('href') === '/papers/development_economics_syllabus.pdf')).toBeTruthy()
+    const link = screen.getByRole('link', { name: /^development economics$/i })
+    expect(link).toHaveAttribute('href', '/papers/development_economics_syllabus.pdf')
   })
 
   it('renders Econometrics with syllabus link', () => {
     render(<App />)
-    expect(screen.getByText('Econometrics')).toBeInTheDocument()
-    const links = screen.getAllByRole('link', { name: /syllabus/i })
-    expect(links.find(l => l.getAttribute('href') === '/papers/phd_econometrics_syllabus.pdf')).toBeTruthy()
+    const link = screen.getByRole('link', { name: /^econometrics$/i })
+    expect(link).toHaveAttribute('href', '/papers/phd_econometrics_syllabus.pdf')
   })
 })
 

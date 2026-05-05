@@ -1,25 +1,41 @@
-import { describe, it, expect } from 'vitest'
-import { render } from '@testing-library/react'
+import { describe, it } from 'vitest'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { existsSync } from 'fs'
-import { resolve } from 'path'
+import { dirname, resolve } from 'path'
+import { fileURLToPath } from 'url'
 import App from '../App'
+
+const publicDir = resolve(dirname(fileURLToPath(import.meta.url)), '../../public')
+
+function revealMoreLinks() {
+  screen.getAllByRole('button', { name: /^more$/i }).forEach((button) => {
+    fireEvent.click(button)
+  })
+}
+
+function getMissingPublicPaths(container, selector, getPath) {
+  const missing = []
+
+  container.querySelectorAll(selector).forEach((element) => {
+    const path = getPath(element)
+    if (path && path.startsWith('/') && !path.startsWith('//')) {
+      const filePath = resolve(publicDir, path.slice(1))
+      if (!existsSync(filePath)) {
+        missing.push(path)
+      }
+    }
+  })
+
+  return missing
+}
 
 describe('No broken local links', () => {
   it('all local href paths point to existing files in public/', () => {
     const { container } = render(<App />)
-    const allLinks = container.querySelectorAll('a[href]')
-    const publicDir = resolve(__dirname, '../../public')
-    const broken = []
-
-    allLinks.forEach((link) => {
+    revealMoreLinks()
+    const broken = getMissingPublicPaths(container, 'a[href]', (link) => {
       const href = link.getAttribute('href')
-      // Only check local paths (starting with / but not //)
-      if (href && href.startsWith('/') && !href.startsWith('//') && !href.startsWith('/#')) {
-        const filePath = resolve(publicDir, href.slice(1))
-        if (!existsSync(filePath)) {
-          broken.push(href)
-        }
-      }
+      return href && !href.startsWith('/#') ? href : null
     })
 
     if (broken.length > 0) {
@@ -29,19 +45,7 @@ describe('No broken local links', () => {
 
   it('all local img src paths point to existing files in public/', () => {
     const { container } = render(<App />)
-    const allImages = container.querySelectorAll('img[src]')
-    const publicDir = resolve(__dirname, '../../public')
-    const broken = []
-
-    allImages.forEach((img) => {
-      const src = img.getAttribute('src')
-      if (src && src.startsWith('/') && !src.startsWith('//')) {
-        const filePath = resolve(publicDir, src.slice(1))
-        if (!existsSync(filePath)) {
-          broken.push(src)
-        }
-      }
-    })
+    const broken = getMissingPublicPaths(container, 'img[src]', (img) => img.getAttribute('src'))
 
     if (broken.length > 0) {
       throw new Error(`Broken local image paths:\n${broken.map(l => `  - ${l}`).join('\n')}`)
@@ -52,6 +56,7 @@ describe('No broken local links', () => {
 describe('External links are well-formed', () => {
   it('all external links use https://', () => {
     const { container } = render(<App />)
+    revealMoreLinks()
     const allLinks = container.querySelectorAll('a[href]')
     const bad = []
 
@@ -71,6 +76,7 @@ describe('External links are well-formed', () => {
 
   it('no external links have empty href', () => {
     const { container } = render(<App />)
+    revealMoreLinks()
     const allLinks = container.querySelectorAll('a[href]')
     const empty = []
 
@@ -88,8 +94,8 @@ describe('External links are well-formed', () => {
 
   it('no duplicate local PDF references to missing files', () => {
     const { container } = render(<App />)
+    revealMoreLinks()
     const allLinks = container.querySelectorAll('a[href^="/papers/"]')
-    const publicDir = resolve(__dirname, '../../public')
     const pdfPaths = new Set()
 
     allLinks.forEach((link) => {

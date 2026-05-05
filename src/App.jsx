@@ -1,25 +1,40 @@
 import { useState } from 'react'
 import './App.css'
 
+function InlineLinks({ links }) {
+  return links.map((link, index) => (
+    <span key={link.href}>
+      {index > 0 && ' | '}
+      <a href={link.href} target="_blank" rel="noopener noreferrer">
+        {link.label}
+      </a>
+    </span>
+  ))
+}
+
 function CoverageLinks({ links }) {
   if (!links || links.length === 0) return null
+
   return (
     <div className="paper__coverage">
       Coverage:{' '}
-      {links.map((link, i) => (
-        <span key={i}>
-          {i > 0 && ' | '}
-          <a href={link.href} target="_blank" rel="noopener noreferrer">
-            {link.label}
-          </a>
-        </span>
-      ))}
+      <InlineLinks links={links} />
     </div>
   )
 }
 
 function Paper({ title, href, venue, award, authors, abstract, links, coverage }) {
-  const [open, setOpen] = useState(false)
+  const [openPanel, setOpenPanel] = useState(null)
+  const abstractOpen = openPanel === 'abstract'
+  const moreOpen = openPanel === 'more'
+  const hasResourceLinks = links && links.length > 0
+  const hasCoverageLinks = coverage && coverage.length > 0
+  const hasMoreContent = hasResourceLinks || hasCoverageLinks
+
+  function togglePanel(panel) {
+    setOpenPanel(openPanel === panel ? null : panel)
+  }
+
   return (
     <div className="paper">
       <div className="paper__title">
@@ -34,35 +49,54 @@ function Paper({ title, href, venue, award, authors, abstract, links, coverage }
       {venue && <div className="paper__venue">{venue}</div>}
       {award && <div className="paper__award">{award}</div>}
       {authors && <div className="paper__authors">{authors}</div>}
-      {(abstract || (links && links.length > 0)) && (
+      {(abstract || hasMoreContent) && (
         <div className="paper__supplements">
           {abstract && (
             <span>
               <button
-                className={`paper__abstract-toggle ${open ? 'paper__abstract-toggle--open' : ''}`}
-                onClick={() => setOpen(!open)}
-                aria-expanded={open}
+                className={`paper__toggle ${abstractOpen ? 'paper__toggle--open' : ''}`}
+                type="button"
+                onClick={() => togglePanel('abstract')}
+                aria-expanded={abstractOpen}
               >
                 Abstract
               </button>
             </span>
           )}
-          {links && links.map((link, i) => (
-            <span key={i}>
-              {(i > 0 || abstract) && ' | '}
-              <a href={link.href} target="_blank" rel="noopener noreferrer">
-                {link.label}
-              </a>
+          {hasMoreContent && (
+            <span>
+              {abstract && ' | '}
+              <button
+                className={`paper__toggle ${moreOpen ? 'paper__toggle--open' : ''}`}
+                type="button"
+                onClick={() => togglePanel('more')}
+                aria-expanded={moreOpen}
+              >
+                More
+              </button>
             </span>
-          ))}
+          )}
         </div>
       )}
       {abstract && (
-        <div className={`paper__abstract ${open ? 'paper__abstract--open' : ''}`}>
-          <p>{abstract}</p>
+        <div className={`paper__panel paper__abstract ${abstractOpen ? 'paper__panel--open' : ''}`}>
+          {abstractOpen && <p>{abstract}</p>}
         </div>
       )}
-      {coverage && coverage.length > 0 && <CoverageLinks links={coverage} />}
+      {hasMoreContent && (
+        <div className={`paper__panel paper__more ${moreOpen ? 'paper__panel--open' : ''}`}>
+          {moreOpen && (
+            <div>
+              {hasResourceLinks && (
+                <div className="paper__more-links">
+                  <InlineLinks links={links} />
+                </div>
+              )}
+              {hasCoverageLinks && <CoverageLinks links={coverage} />}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }

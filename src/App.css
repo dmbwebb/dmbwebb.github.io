@@ -215,12 +215,21 @@
   color: var(--text-muted);
 }
 
-.paper__supplements a {
+.paper__more-links {
+  margin-top: 0.5rem;
+}
+
+.paper__more-links,
+.paper__more-links a {
+  font-size: 1.05rem;
   color: var(--text-muted);
+}
+
+.paper__more-links a {
   font-weight: 500;
 }
 
-.paper__supplements a:hover {
+.paper__more-links a:hover {
   color: var(--accent);
 }
 
@@ -239,8 +248,8 @@
   color: var(--accent);
 }
 
-/* ===== Abstract Toggle ===== */
-.paper__abstract-toggle {
+/* ===== Paper Toggles ===== */
+.paper__toggle {
   background: none;
   border: none;
   padding: 0;
@@ -252,21 +261,26 @@
   transition: color 0.2s ease;
 }
 
-.paper__abstract-toggle:hover {
+.paper__toggle:hover {
   color: var(--accent);
 }
 
-.paper__abstract {
+.paper__toggle--open {
+  color: var(--accent);
+}
+
+.paper__panel {
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.3s ease;
 }
 
-.paper__abstract--open {
+.paper__panel--open {
   grid-template-rows: 1fr;
 }
 
-.paper__abstract > p {
+.paper__panel > p,
+.paper__panel > div {
   overflow: hidden;
   font-size: 1.05rem;
   line-height: 1.65;
@@ -277,10 +291,15 @@
   transition: opacity 0.25s ease, padding 0.3s ease;
 }
 
-.paper__abstract--open > p {
+.paper__panel--open > p,
+.paper__panel--open > div {
   opacity: 1;
-  padding-top: 0.5rem;
+  padding-top: 0;
   padding-bottom: 0.25rem;
+}
+
+.paper__abstract.paper__panel--open > p {
+  padding-top: 0.5rem;
 }
 
 /* ===== Projects / Bits & Bobs ===== */
@@ -322,14 +341,6 @@
 
 .project-item__ref {
   color: var(--text-muted);
-}
-
-.project-item__ref a {
-  color: var(--text-muted);
-}
-
-.project-item__ref a:hover {
-  color: var(--accent);
 }
 
 /* ===== Footer ===== */

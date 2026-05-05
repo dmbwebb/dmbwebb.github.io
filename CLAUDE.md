@@ -21,6 +21,7 @@ Always test extensively before committing:
 - Test responsive layout at mobile (400px) and desktop (1200px+) widths
 - Verify all PDFs load correctly from `/papers/`
 - Check that the CNAME file matches `www.duncan-webb.com`
+- Tests use Vitest; run `npm test` directly — Jest flags like `--runInBand` are invalid.
 
 ## Structure
 
