@@ -272,12 +272,12 @@ function App() {
 
         <Paper
           title="Stress, Stigma, and Learning in Madagascar"
-          authors={<>with Oscar Diaz, Mariachiara Iannuzzi, and <a href="https://www.parisschoolofeconomics.eu/en/persons/karen-macours/" target="_blank" rel="noopener noreferrer">Karen Macours</a></>}
+          authors={<>with <a href="https://sites.google.com/view/oscarmdiazb/inicio" target="_blank" rel="noopener noreferrer">Oscar Diaz</a>, Mariachiara Iannuzzi, and <a href="https://www.parisschoolofeconomics.eu/en/persons/karen-macours/" target="_blank" rel="noopener noreferrer">Karen Macours</a></>}
         />
 
         <Paper
           title="Parental Coaching to Improve Adolescent Smartphone Habits in Colombia"
-          authors={<>with <a href="https://jcurrie.scholar.princeton.edu/" target="_blank" rel="noopener noreferrer">Janet Currie</a>, Oscar Diaz, <a href="https://www.hks.harvard.edu/faculty/juan-saavedra" target="_blank" rel="noopener noreferrer">Juan Saavedra</a>, and <a href="https://economics.mit.edu/people/faculty/frank-schilbach" target="_blank" rel="noopener noreferrer">Frank Schilbach</a></>}
+          authors={<>with <a href="https://jcurrie.scholar.princeton.edu/" target="_blank" rel="noopener noreferrer">Janet Currie</a>, <a href="https://sites.google.com/view/oscarmdiazb/inicio" target="_blank" rel="noopener noreferrer">Oscar Diaz</a>, <a href="https://www.hks.harvard.edu/faculty/juan-saavedra" target="_blank" rel="noopener noreferrer">Juan Saavedra</a>, and <a href="https://economics.mit.edu/people/faculty/frank-schilbach" target="_blank" rel="noopener noreferrer">Frank Schilbach</a></>}
         />
 
         <Paper
