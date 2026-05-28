@@ -11,6 +11,7 @@ npm run deploy   # Build + deploy to gh-pages branch
 ```
 
 - **Deploying**: `git push origin main` does NOT deploy the site. GitHub Pages serves from the `gh-pages` branch. Always run `npm run deploy` after pushing to actually deploy. When committing and pushing, always also run `npm run deploy`.
+- **CV-only deploy exception**: If the main worktree has unrelated dirty files and only `public/papers/duncan_webb_cv_website.pdf` changed, update that PDF directly in a separate `gh-pages` worktree and push `gh-pages` so unrelated `dist/` changes are not published.
 - The `.github/workflows/deploy.yml` has been deleted. PAT lacks `workflow` scope so it can't be pushed to GitHub. Pages source is `gh-pages` branch (legacy mode).
 
 ## Testing
