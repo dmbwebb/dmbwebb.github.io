@@ -38,7 +38,7 @@ Always test extensively before committing:
 
 After running `npm run deploy`, always verify the live site in Chrome (via Claude-in-Chrome) by navigating to `www.duncan-webb.com` and confirming the changed text is visible. GitHub Pages CDN can take 1–5 min to propagate. Verification protocol:
 1. Check which JS bundle the page loaded (`Array.from(document.querySelectorAll('script[src]')).map(s=>s.src)`) and compare to the new bundle filename in `dist/assets/`.
-2. If the old bundle is still served, wait 60s and reload — keep checking every 60s until the new bundle loads and the changed text is confirmed in the DOM.
+2. If the old bundle is still served, first distinguish browser cache from CDN: `fetch('https://www.duncan-webb.com/?cb='+performance.now(), {cache:'no-store'}).then(r=>r.text()).then(t=>t.match(/index-[\w-]+\.js/)?.[0])`. If this returns the NEW bundle, it's just browser cache — navigate to `https://www.duncan-webb.com/?fresh=1` (query string forces a fresh load). Only if the fetch returns the old bundle is it CDN propagation — then wait 60s and re-check.
 3. Do not consider the task done until Chrome shows the correct text.
 
 ## Type scale
@@ -52,6 +52,8 @@ The site uses a strict 4-tier scale — do not introduce new sizes when adding s
 Responsive overrides for `.hero__title` (1.7rem @ 768px, 1.4rem @ 480px) and `.section__title` (1.55rem @ 768px) are the only exceptions.
 
 ## Lessons
+
+- The website CV PDF (`public/papers/duncan_webb_cv_website.pdf`) is generated from the latest `~/Dropbox/Dropbox/CVs/cv_academic_YYYY_MM_DD.docx`. To update: edit the docx (docx skill), save a NEW dated docx+pdf copy in CVs/ (don't overwrite the old one), copy the PDF here, deploy.
 
 - Co-author links added (Laajaj, Macours, Vera Rueda, Friedman, Suanna Oh) — check `src/App.jsx` before adding new ones to avoid duplicates.
 - A PNG version of the D favicon lives in `public/assets/` for use on the Google Sites mirror — Google Sites does not accept `.ico` files.
