@@ -162,7 +162,7 @@ function App() {
             <a href="https://www.povertyactionlab.org/" target="_blank" rel="noopener noreferrer">
               J-PAL
             </a>{' '}
-            Affiliated Professor and a member of the{' '}
+            affiliate and a member of the{' '}
             <a href="https://novafrica.org/" target="_blank" rel="noopener noreferrer">
               NOVAFRICA
             </a>{' '}
