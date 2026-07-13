@@ -58,5 +58,5 @@ Responsive overrides for `.hero__title` (1.7rem @ 768px, 1.4rem @ 480px) and `.s
 - Co-author links added (Laajaj, Macours, Vera Rueda, Friedman, Suanna Oh) — check `src/App.jsx` before adding new ones to avoid duplicates.
 - A PNG version of the D favicon lives in `public/assets/` for use on the Google Sites mirror — Google Sites does not accept `.ico` files.
 - Google Sites mirror still needs: favicon uploaded manually and site republished.
-- When adding coauthor links, verify every URL before deploying — academic homepages move frequently (Stanford→Google Sites, Google Sites→Harvard, etc). Use parallel subagents for speed.
+- When adding coauthor names or links, verify preferred spelling and diacritics against an institutional profile, and verify every URL before deploying — academic homepages move frequently (Stanford→Google Sites, Google Sites→Harvard, etc). Use parallel subagents for speed.
 - `wip_draft.md` is a scratch file for drafting website content — don't commit it.
