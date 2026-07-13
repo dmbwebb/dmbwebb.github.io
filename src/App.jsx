@@ -277,7 +277,7 @@ function App() {
 
         <Paper
           title="Parental Coaching to Improve Adolescent Smartphone Habits in Colombia"
-          authors={<>with <a href="https://jcurrie.scholar.princeton.edu/" target="_blank" rel="noopener noreferrer">Janet Currie</a>, <a href="https://sites.google.com/view/oscarmdiazb/inicio" target="_blank" rel="noopener noreferrer">Oscar Diaz</a>, <a href="https://www.hks.harvard.edu/faculty/juan-saavedra" target="_blank" rel="noopener noreferrer">Juan Saavedra</a>, Angela Guarin, and <a href="https://economics.mit.edu/people/faculty/frank-schilbach" target="_blank" rel="noopener noreferrer">Frank Schilbach</a></>}
+          authors={<>with <a href="https://jcurrie.scholar.princeton.edu/" target="_blank" rel="noopener noreferrer">Janet Currie</a>, <a href="https://sites.google.com/view/oscarmdiazb/inicio" target="_blank" rel="noopener noreferrer">Oscar Diaz</a>, <a href="https://www.hks.harvard.edu/faculty/juan-saavedra" target="_blank" rel="noopener noreferrer">Juan Saavedra</a>, Ángela Guarín, and <a href="https://economics.mit.edu/people/faculty/frank-schilbach" target="_blank" rel="noopener noreferrer">Frank Schilbach</a></>}
         />
 
         <Paper
