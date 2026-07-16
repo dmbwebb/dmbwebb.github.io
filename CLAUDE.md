@@ -53,10 +53,11 @@ Responsive overrides for `.hero__title` (1.7rem @ 768px, 1.4rem @ 480px) and `.s
 
 ## Lessons
 
-- The website CV PDF (`public/papers/duncan_webb_cv_website.pdf`) is generated from the latest `~/Dropbox/Dropbox/CVs/cv_academic_YYYY_MM_DD.docx`. To update: edit the docx (docx skill), save a NEW dated docx+pdf copy in CVs/ (don't overwrite the old one), copy the PDF here, deploy.
+- The website CV PDF (`public/papers/duncan_webb_cv_website.pdf`) is generated from the latest `~/Dropbox/Dropbox/CVs/cv_academic_YYYY_MM_DD.docx`. To update: edit the docx (docx skill), save a NEW dated docx+pdf copy in CVs/ (don't overwrite the old one), copy the PDF here, deploy. **To make the PDF, run `~/Dropbox/Dropbox/CVs/export_cv_with_word.command <docx>`** — it exports via Word so Constantia stays embedded. Do NOT hand-roll the Word AppleScript (grabbing `active document` risks Duncan's other open Word docs; the wrong `file format` enum silently writes a plain-text file with a `.pdf` name) and do NOT use LibreOffice/`soffice` (substitutes Constantia→Liberation Serif, reflowing the layout).
 
 - Co-author links added (Laajaj, Macours, Vera Rueda, Friedman, Suanna Oh) — check `src/App.jsx` before adding new ones to avoid duplicates.
 - A PNG version of the D favicon lives in `public/assets/` for use on the Google Sites mirror — Google Sites does not accept `.ico` files.
 - Google Sites mirror still needs: favicon uploaded manually and site republished.
 - When adding coauthor names or links, verify preferred spelling and diacritics against an institutional profile, and verify every URL before deploying — academic homepages move frequently (Stanford→Google Sites, Google Sites→Harvard, etc). Use parallel subagents for speed.
 - `wip_draft.md` is a scratch file for drafting website content — don't commit it.
+- **This site is a general-purpose personal/academic site — never stage anything else's sensitive files here** (survey data, PII, unrelated project outputs), even "temporarily" or password-protected. If that happens: reset the local `main` commit (`git reset --soft HEAD~1` if unpushed), rebuild `dist/` clean, then purge it from the public `gh-pages` history (not just the tip) with `npx gh-pages -d dist --dotfiles --no-history` (clear `node_modules/.cache/gh-pages` first if a prior push half-failed) — this force-replaces `gh-pages` with a single fresh commit containing no trace of the file, unlike a normal `deploy` which appends to history and leaves the blob reachable.
