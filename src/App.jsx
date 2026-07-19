@@ -266,6 +266,11 @@ function App() {
         <h3 className="section__subtitle">Selected Work in Progress</h3>
 
         <Paper
+          title="Automating Robustness: Can Large Language Models Run Robustness Checks?"
+          authors={<>with Magnus Johannesson, Joseph Kopecky, and Lester Lusher</>}
+        />
+
+        <Paper
           title="AI-Assisted Screening and Health Care Demand in India"
           authors={<>with <a href="https://sites.google.com/view/patrickagte" target="_blank" rel="noopener noreferrer">Patrick Agte</a> and <a href="https://sites.google.com/view/pascaline-dupas/home" target="_blank" rel="noopener noreferrer">Pascaline Dupas</a></>}
         />
