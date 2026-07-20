@@ -266,7 +266,7 @@ function App() {
         <h3 className="section__subtitle">Selected Work in Progress</h3>
 
         <Paper
-          title="Automating Robustness: Can Large Language Models Run Robustness Checks?"
+          title="Automating Robustness: Using Agentic AI to Automate Robustness Checks"
           authors={<>with Magnus Johannesson, Joseph Kopecky, and Lester Lusher</>}
         />
 

@@ -94,7 +94,7 @@ describe('Contact links', () => {
 describe('Working papers', () => {
   it('renders the AI robustness checker project', () => {
     render(<App />)
-    expect(screen.getByText(/automating robustness: can large language models run robustness checks/i)).toBeInTheDocument()
+    expect(screen.getByText(/automating robustness: using agentic ai to automate robustness checks/i)).toBeInTheDocument()
     expect(screen.getByText(/magnus johannesson, joseph kopecky, and lester lusher/i)).toBeInTheDocument()
   })
 
