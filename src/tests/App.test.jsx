@@ -92,7 +92,7 @@ describe('Contact links', () => {
 })
 
 describe('Working papers', () => {
-  it('renders the AI robustness checker project', () => {
+  it('renders the AI robustness checker project and coauthor links', () => {
     render(<App />)
     expect(screen.getByText(/automating robustness: using agentic ai to automate robustness checks/i)).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Magnus Johannesson' })).toHaveAttribute('href', 'https://www.hhs.se/en/persons/j/johannesson-magnus/')

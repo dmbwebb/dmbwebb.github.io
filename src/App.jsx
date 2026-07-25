@@ -23,7 +23,7 @@ function CoverageLinks({ links }) {
   )
 }
 
-function Paper({ title, href, venue, venueBold = true, award, authors, abstract, links, coverage }) {
+function Paper({ title, href, venue, venueRegular = false, award, authors, abstract, links, coverage }) {
   const [openPanel, setOpenPanel] = useState(null)
   const abstractOpen = openPanel === 'abstract'
   const moreOpen = openPanel === 'more'
@@ -47,7 +47,7 @@ function Paper({ title, href, venue, venueBold = true, award, authors, abstract,
         )}
       </div>
       {venue && (
-        <div className={`paper__venue${venueBold ? '' : ' paper__venue--regular'}`}>
+        <div className={`paper__venue${venueRegular ? ' paper__venue--regular' : ''}`}>
           {venue}
         </div>
       )}
@@ -209,7 +209,7 @@ function App() {
           href="/papers/StigmaHygieneMadagascar.pdf"
           authors={<>with <a href="https://www.parisschoolofeconomics.eu/en/persons/karen-macours/" target="_blank" rel="noopener noreferrer">Karen Macours</a> and <a href="https://sites.google.com/view/julieta-vera-rueda/" target="_blank" rel="noopener noreferrer">Julieta Vera Rueda</a></>}
           venue="CEPR Discussion Paper 21167, 2026"
-          venueBold={false}
+          venueRegular
           abstract={`Menstrual stigma affects adolescent girls worldwide, yet its impact on human capital development remains largely unexamined. We use a field experiment in 140 schools in Madagascar to evaluate interventions designed to reduce menstrual stigma and promote hygiene behaviors (N=2,250). Teacher-led sensitization on stigma and hygiene, menstrual products, and sanitation infrastructure together substantially improve girls\u2019 learning outcomes on standardized tests (+0.2 SD). These gains do not operate by improving school attendance or health, the channels typically invoked to justify menstrual hygiene programs. Instead, the improvements appear to arise from psychosocial mechanisms, including reduced menstrual stigma (measured using lab-in-the-field exercises, enumerator observations, and self-reports) and reduced stress (lower heart rate). We also test a novel approach for norm change by identifying \u201Cpositive deviants\u201D \u2013 girls within schools willing to openly challenge menstrual stigma. Selecting and training these positive deviants to serve as peer ambassadors for norm change produces significant additional improvements in self-reported stigma and hygiene behavior. The results demonstrate that addressing gender-specific psychosocial barriers can substantially improve girls\u2019 education outcomes in highly deprived contexts, while highlighting both the promise and limitations of leveraging positive deviance for social norm change.`}
           links={[
             { label: 'JPAL Summary', href: 'https://www.povertyactionlab.org/evaluation/addressing-menstrual-stigma-and-hygiene-improve-education-and-psychosocial-well-being' },
