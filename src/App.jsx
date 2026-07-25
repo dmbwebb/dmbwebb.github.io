@@ -23,7 +23,7 @@ function CoverageLinks({ links }) {
   )
 }
 
-function Paper({ title, href, venue, award, authors, abstract, links, coverage }) {
+function Paper({ title, href, venue, venueBold = true, award, authors, abstract, links, coverage }) {
   const [openPanel, setOpenPanel] = useState(null)
   const abstractOpen = openPanel === 'abstract'
   const moreOpen = openPanel === 'more'
@@ -46,7 +46,11 @@ function Paper({ title, href, venue, award, authors, abstract, links, coverage }
           <span>{title}</span>
         )}
       </div>
-      {venue && <div className="paper__venue">{venue}</div>}
+      {venue && (
+        <div className={`paper__venue${venueBold ? '' : ' paper__venue--regular'}`}>
+          {venue}
+        </div>
+      )}
       {award && <div className="paper__award">{award}</div>}
       {authors && <div className="paper__authors">{authors}</div>}
       {(abstract || hasMoreContent) && (
@@ -205,6 +209,7 @@ function App() {
           href="/papers/StigmaHygieneMadagascar.pdf"
           authors={<>with <a href="https://www.parisschoolofeconomics.eu/en/persons/karen-macours/" target="_blank" rel="noopener noreferrer">Karen Macours</a> and <a href="https://sites.google.com/view/julieta-vera-rueda/" target="_blank" rel="noopener noreferrer">Julieta Vera Rueda</a></>}
           venue="CEPR Discussion Paper 21167, 2026"
+          venueBold={false}
           abstract={`Menstrual stigma affects adolescent girls worldwide, yet its impact on human capital development remains largely unexamined. We use a field experiment in 140 schools in Madagascar to evaluate interventions designed to reduce menstrual stigma and promote hygiene behaviors (N=2,250). Teacher-led sensitization on stigma and hygiene, menstrual products, and sanitation infrastructure together substantially improve girls\u2019 learning outcomes on standardized tests (+0.2 SD). These gains do not operate by improving school attendance or health, the channels typically invoked to justify menstrual hygiene programs. Instead, the improvements appear to arise from psychosocial mechanisms, including reduced menstrual stigma (measured using lab-in-the-field exercises, enumerator observations, and self-reports) and reduced stress (lower heart rate). We also test a novel approach for norm change by identifying \u201Cpositive deviants\u201D \u2013 girls within schools willing to openly challenge menstrual stigma. Selecting and training these positive deviants to serve as peer ambassadors for norm change produces significant additional improvements in self-reported stigma and hygiene behavior. The results demonstrate that addressing gender-specific psychosocial barriers can substantially improve girls\u2019 education outcomes in highly deprived contexts, while highlighting both the promise and limitations of leveraging positive deviance for social norm change.`}
           links={[
             { label: 'JPAL Summary', href: 'https://www.povertyactionlab.org/evaluation/addressing-menstrual-stigma-and-hygiene-improve-education-and-psychosocial-well-being' },
@@ -267,7 +272,7 @@ function App() {
 
         <Paper
           title="Automating Robustness: Using Agentic AI to Automate Robustness Checks"
-          authors={<>with Magnus Johannesson, Joseph Kopecky, and Lester Lusher</>}
+          authors={<>with <a href="https://www.hhs.se/en/persons/j/johannesson-magnus/" target="_blank" rel="noopener noreferrer">Magnus Johannesson</a>, <a href="https://www.josephkopecky.com/" target="_blank" rel="noopener noreferrer">Joseph Kopecky</a>, and <a href="https://www.econ.pitt.edu/people/lester-lusher" target="_blank" rel="noopener noreferrer">Lester Lusher</a></>}
         />
 
         <Paper
@@ -282,7 +287,7 @@ function App() {
 
         <Paper
           title="Parental Coaching to Improve Adolescent Smartphone Habits in Colombia"
-          authors={<>with <a href="https://jcurrie.scholar.princeton.edu/" target="_blank" rel="noopener noreferrer">Janet Currie</a>, <a href="https://sites.google.com/view/oscarmdiazb/inicio" target="_blank" rel="noopener noreferrer">Oscar Diaz</a>, <a href="https://www.hks.harvard.edu/faculty/juan-saavedra" target="_blank" rel="noopener noreferrer">Juan Saavedra</a>, Ángela Guarín, and <a href="https://economics.mit.edu/people/faculty/frank-schilbach" target="_blank" rel="noopener noreferrer">Frank Schilbach</a></>}
+          authors={<>with <a href="https://jcurrie.scholar.princeton.edu/" target="_blank" rel="noopener noreferrer">Janet Currie</a>, <a href="https://sites.google.com/view/oscarmdiazb/inicio" target="_blank" rel="noopener noreferrer">Oscar Diaz</a>, <a href="https://www.hks.harvard.edu/faculty/juan-saavedra" target="_blank" rel="noopener noreferrer">Juan Saavedra</a>, <a href="https://imagina.uniandes.edu.co/red-imagina/angela-guarin/" target="_blank" rel="noopener noreferrer">Ángela Guarín</a>, and <a href="https://economics.mit.edu/people/faculty/frank-schilbach" target="_blank" rel="noopener noreferrer">Frank Schilbach</a></>}
         />
 
         <Paper

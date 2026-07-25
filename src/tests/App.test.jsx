@@ -95,7 +95,9 @@ describe('Working papers', () => {
   it('renders the AI robustness checker project', () => {
     render(<App />)
     expect(screen.getByText(/automating robustness: using agentic ai to automate robustness checks/i)).toBeInTheDocument()
-    expect(screen.getByText(/magnus johannesson, joseph kopecky, and lester lusher/i)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Magnus Johannesson' })).toHaveAttribute('href', 'https://www.hhs.se/en/persons/j/johannesson-magnus/')
+    expect(screen.getByRole('link', { name: 'Joseph Kopecky' })).toHaveAttribute('href', 'https://www.josephkopecky.com/')
+    expect(screen.getByRole('link', { name: 'Lester Lusher' })).toHaveAttribute('href', 'https://www.econ.pitt.edu/people/lester-lusher')
   })
 
   it('renders Silence to Solidarity', () => {
@@ -118,12 +120,21 @@ describe('Working papers', () => {
     render(<App />)
     const link = screen.getByRole('link', { name: /menstrual stigma/i })
     expect(link).toHaveAttribute('href', '/papers/StigmaHygieneMadagascar.pdf')
+    expect(screen.getByText('CEPR Discussion Paper 21167, 2026')).toHaveClass('paper__venue--regular')
   })
 
   it('renders Psychological Mechanisms paper', () => {
     render(<App />)
     const link = screen.getByRole('link', { name: /psychological mechanisms/i })
     expect(link).toHaveAttribute('href', '/papers/FriedmanOhWebbPsychMechs.pdf')
+  })
+
+  it('links Ángela Guarín’s profile', () => {
+    render(<App />)
+    expect(screen.getByRole('link', { name: 'Ángela Guarín' })).toHaveAttribute(
+      'href',
+      'https://imagina.uniandes.edu.co/red-imagina/angela-guarin/',
+    )
   })
 })
 

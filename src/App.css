@@ -197,6 +197,10 @@
   margin-top: 0.2rem;
 }
 
+.paper__venue--regular {
+  font-weight: 400;
+}
+
 .paper__award {
   font-size: 1.05rem;
   color: var(--accent);
