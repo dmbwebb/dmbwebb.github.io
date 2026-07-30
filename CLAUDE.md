@@ -54,7 +54,7 @@ Responsive overrides for `.hero__title` (1.7rem @ 768px, 1.4rem @ 480px) and `.s
 
 ## Lessons
 
-- The website CV PDF (`public/papers/duncan_webb_cv_website.pdf`) is generated from `~/Dropbox/Dropbox/CVs/cv_academic.tex`. Edit that canonical LaTeX source, then run `~/Dropbox/Dropbox/CVs/build_cv.command` for `cv_academic.pdf` or pass a dated output path such as `~/Dropbox/Dropbox/CVs/cv_academic_YYYY_MM_DD.pdf`. Copy the generated PDF here and deploy. The LaTeX layout uses Palatino because Word's private Constantia renderer is unavailable to XeLaTeX; its four-page geometry and vertical rhythm were calibrated page-by-page against the former Constantia Word PDF.
+- The website CV PDF (`public/papers/duncan_webb_cv_website.pdf`) is generated from `~/Dropbox/Dropbox/CVs/cv_academic.tex`. Edit that canonical LaTeX source, then run `~/Dropbox/Dropbox/CVs/build_cv.command` for `cv_academic.pdf` or pass a dated output path such as `~/Dropbox/Dropbox/CVs/cv_academic_YYYY_MM_DD.pdf`. Copy the generated PDF here and deploy. The LaTeX source uses the licensed Constantia files in Microsoft Word's `Contents/Resources/DFonts/` directory; its four-page geometry and vertical rhythm were calibrated page-by-page against the former Constantia Word PDF.
 
 - Co-author links added (Laajaj, Macours, Vera Rueda, Friedman, Suanna Oh) — check `src/App.jsx` before adding new ones to avoid duplicates.
 - A PNG version of the D favicon lives in `public/assets/` for use on the Google Sites mirror — Google Sites does not accept `.ico` files.
