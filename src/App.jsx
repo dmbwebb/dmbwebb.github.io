@@ -277,7 +277,7 @@ function App() {
 
         <Paper
           title="AI-Assisted Screening and Health Care Demand in India"
-          authors={<>with <a href="https://sites.google.com/view/patrickagte" target="_blank" rel="noopener noreferrer">Patrick Agte</a> and <a href="https://sites.google.com/view/pascaline-dupas/home" target="_blank" rel="noopener noreferrer">Pascaline Dupas</a></>}
+          authors={<>with <a href="https://sites.google.com/view/patrickagte" target="_blank" rel="noopener noreferrer">Patrick Agte</a>, <a href="https://nidhr.icmr.org.in/director.php" target="_blank" rel="noopener noreferrer">Mona Duggal</a>, and <a href="https://sites.google.com/view/pascaline-dupas/home" target="_blank" rel="noopener noreferrer">Pascaline Dupas</a></>}
         />
 
         <Paper
