@@ -15,6 +15,13 @@ npm run deploy   # Build + deploy to gh-pages branch
 - **CV-only deploy exception**: If the main worktree has unrelated dirty files and only `public/papers/duncan_webb_cv_website.pdf` changed, update that PDF directly in a separate `gh-pages` worktree and push `gh-pages` so unrelated `dist/` changes are not published.
 - The `.github/workflows/deploy.yml` has been deleted. PAT lacks `workflow` scope so it can't be pushed to GitHub. Pages source is `gh-pages` branch (legacy mode).
 
+## Analytics
+
+GoatCounter (account `dmbwebb`, dashboard at https://dmbwebb.goatcounter.com; no cookies, so no consent banner). Two pieces:
+- **Pageviews**: `count.js` snippet in `index.html` (`data-goatcounter="https://dmbwebb.goatcounter.com/count"`). Ignores localhost automatically.
+- **Click events**: `src/analytics.js` — one delegated document-level listener (init'd in `main.jsx`), no per-link attributes needed. Event naming: `/papers/*` → `download/<file>`, `mailto:` → `contact/email`, external → `ext/<hostname>`; in-page `#` anchors ignored. Tests in `src/tests/analytics.test.jsx`.
+- CSV export + API are in the dashboard settings if stats need to be pulled programmatically.
+
 ## Testing
 
 Always test extensively before committing:
@@ -37,7 +44,7 @@ Always test extensively before committing:
 
 ## Deployment
 
-After running `npm run deploy`, always verify the live site in Chrome (via Claude-in-Chrome) by navigating to `www.duncan-webb.com` and confirming the changed text is visible. GitHub Pages CDN can take 1–5 min to propagate. Verification protocol:
+After running `npm run deploy`, always verify the live site in Chrome (via Claude-in-Chrome) by navigating to `www.duncan-webb.com` and confirming the changed text is visible. If the Chrome extension won't connect, headless Playwright (`~/.venvs/lifecoach/bin/python` has it + chromium) is an acceptable fallback: load the live URL, assert on the DOM/network requests, and poll the CDN with `until curl -s "https://www.duncan-webb.com/?cb=$(date +%s)" | grep -q "<marker>"; do sleep 5; done` before checking. GitHub Pages CDN can take 1–5 min to propagate. Verification protocol:
 1. Check which JS bundle the page loaded (`Array.from(document.querySelectorAll('script[src]')).map(s=>s.src)`) and compare to the new bundle filename in `dist/assets/`.
 2. If the old bundle is still served, first distinguish browser cache from CDN: `fetch('https://www.duncan-webb.com/?cb='+performance.now(), {cache:'no-store'}).then(r=>r.text()).then(t=>t.match(/index-[\w-]+\.js/)?.[0])`. If this returns the NEW bundle, it's just browser cache — navigate to `https://www.duncan-webb.com/?fresh=1` (query string forces a fresh load). Only if the fetch returns the old bundle is it CDN propagation — then wait 60s and re-check.
 3. Do not consider the task done until Chrome shows the correct text.
