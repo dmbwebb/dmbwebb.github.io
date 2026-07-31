@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { describe, it, expect, beforeAll, beforeEach, vi } from 'vitest'
 import { initClickTracking } from '../analytics.js'
 
 function clickLink(href, text = 'link') {
@@ -16,15 +16,21 @@ function clickLink(href, text = 'link') {
 describe('click tracking', () => {
   let count
 
+  // Once for the whole file: the listener is document-level, so re-initialising
+  // per test would stack duplicate listeners and count each click several times.
+  beforeAll(() => {
+    initClickTracking()
+  })
+
   beforeEach(() => {
     document.body.innerHTML = ''
     count = vi.fn()
     window.goatcounter = { count }
-    initClickTracking()
   })
 
   it('tracks paper downloads by filename', () => {
     clickLink('/papers/WebbSilenceSolidarity.pdf', 'Silence to Solidarity')
+    expect(count).toHaveBeenCalledTimes(1)
     expect(count).toHaveBeenCalledWith({
       path: 'download/WebbSilenceSolidarity.pdf',
       title: 'Silence to Solidarity',
