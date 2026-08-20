@@ -119,7 +119,7 @@ describe('Working papers', () => {
   it('renders Menstrual Stigma paper', () => {
     render(<App />)
     const link = screen.getByRole('link', { name: /menstrual stigma/i })
-    expect(link).toHaveAttribute('href', '/papers/StigmaHygieneMadagascar.pdf')
+    expect(link).toHaveAttribute('href', '/papers/MacoursVeraRuedaWebb_MenstrualStigmaHygieneMadagascar.pdf')
     expect(screen.getByText('CEPR Discussion Paper 21167, 2026')).toHaveClass('paper__venue--regular')
   })
 
