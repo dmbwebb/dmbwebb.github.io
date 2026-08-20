@@ -63,6 +63,9 @@ Responsive overrides for `.hero__title` (1.7rem @ 768px, 1.4rem @ 480px) and `.s
 
 - The website CV PDF (`public/papers/duncan_webb_cv_website.pdf`) is generated from `~/Dropbox/Dropbox/CVs/cv_academic.tex`. Edit that canonical LaTeX source, then run `~/Dropbox/Dropbox/CVs/build_cv.command` for `cv_academic.pdf` or pass a dated output path such as `~/Dropbox/Dropbox/CVs/cv_academic_YYYY_MM_DD.pdf`. Copy the generated PDF here and deploy. The LaTeX source uses the licensed Constantia files in Microsoft Word's `Contents/Resources/DFonts/` directory; its four-page geometry and vertical rhythm were calibrated page-by-page against the former Constantia Word PDF.
 
+- The Madagascar K1 paper's canonical source is `~/Dropbox/Apps/Overleaf/Mada Paper/main_mada.tex`. Before publishing `main_mada.pdf`, confirm `latexmk -pdf main_mada.tex` reports it up to date, then synchronize the website title and abstract with the manuscript.
+- The public Madagascar download is `public/papers/MacoursVeraRuedaWebb_MenstrualStigmaHygieneMadagascar.pdf`. Keep `public/papers/StigmaHygieneMadagascar.pdf` byte-identical as a legacy alias for existing links.
+
 - Co-author links added (Laajaj, Macours, Vera Rueda, Friedman, Suanna Oh) — check `src/App.jsx` before adding new ones to avoid duplicates.
 - A PNG version of the D favicon lives in `public/assets/` for use on the Google Sites mirror — Google Sites does not accept `.ico` files.
 - Google Sites mirror still needs: favicon uploaded manually and site republished.
