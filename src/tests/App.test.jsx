@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import App from '../App'
 
 describe('App renders all sections', () => {
@@ -121,6 +121,13 @@ describe('Working papers', () => {
     const link = screen.getByRole('link', { name: /menstrual stigma/i })
     expect(link).toHaveAttribute('href', '/papers/MacoursVeraRuedaWebb_MenstrualStigmaHygieneMadagascar.pdf')
     expect(screen.getByText('CEPR Discussion Paper 21167, 2026')).toHaveClass('paper__venue--regular')
+
+    const paper = link.closest('.paper')
+    fireEvent.click(within(paper).getByRole('button', { name: /^more$/i }))
+    expect(within(paper).getByRole('link', { name: 'FID Video' })).toHaveAttribute(
+      'href',
+      'https://www.youtube.com/watch?v=saK1-5y5FpU',
+    )
   })
 
   it('renders Psychological Mechanisms paper', () => {

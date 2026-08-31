@@ -214,6 +214,7 @@ function App() {
           links={[
             { label: 'JPAL Summary', href: 'https://www.povertyactionlab.org/evaluation/addressing-menstrual-stigma-and-hygiene-improve-education-and-psychosocial-well-being' },
             { label: 'FID', href: 'https://fundinnovation.dev/news/ameliorer-les-apprentissages-a-travers-une-approche-combinee-d-interventions-sur-l-hygiene-menstruelle' },
+            { label: 'FID Video', href: 'https://www.youtube.com/watch?v=saK1-5y5FpU' },
             { label: 'VoxDev', href: 'https://voxdev.org/topic/health/improving-hygiene-reducing-menstrual-stigma-and-boosting-learning-schools' },
             { label: 'CEPR', href: 'https://cepr.org/publications/dp21167' },
           ]}
