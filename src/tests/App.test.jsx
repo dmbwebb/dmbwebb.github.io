@@ -87,7 +87,7 @@ describe('Contact links', () => {
 
   it('renders office location', () => {
     render(<App />)
-    expect(screen.getByText(/B115B, Nova SBE/)).toBeInTheDocument()
+    expect(screen.getByText(/B128C, Nova SBE/)).toBeInTheDocument()
   })
 })
 
