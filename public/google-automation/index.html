@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Information about Duncan Webb Personal Automation and its use of Google account data." />
+    <title>Duncan Webb Personal Automation</title>
+    <link rel="icon" href="/assets/favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <a class="owner" href="/">Duncan Webb</a>
+        <nav class="nav" aria-label="Google automation policies">
+          <a href="./">About</a>
+          <a href="./privacy/">Privacy</a>
+          <a href="./terms/">Terms</a>
+        </nav>
+      </header>
+
+      <div class="eyebrow">Private personal tool</div>
+      <h1>Duncan Webb Personal Automation</h1>
+      <p class="lede">This is a set of locally run tools that Duncan Webb uses with his own Google account for research, teaching, and personal administration. It is a single-user tool and is not offered to the public.</p>
+
+      <section class="notice" aria-labelledby="data-notice">
+        <h2 id="data-notice">Data notice</h2>
+        <p>The tool accesses Google data only after Duncan authorizes it. It acts when Duncan requests a task or when an automation he configured runs. Some AI-assisted tasks send the minimum content needed for that task to the AI provider Duncan selected.</p>
+        <p><a href="./privacy/">Read the full privacy policy</a> before authorizing access.</p>
+      </section>
+
+      <h2>What the tool does</h2>
+      <ul>
+        <li>Reads and manages Duncan's Gmail messages, drafts, and labels.</li>
+        <li>Reads and manages events in Google Calendar and entries in Google Contacts.</li>
+        <li>Finds, reads, creates, updates, and organizes files in Google Drive, Google Docs, and Google Sheets.</li>
+        <li>Authorizes short-lived Google Cloud access for a read-only Firestore export used by one research workflow.</li>
+      </ul>
+
+      <h2>How data is handled</h2>
+      <p>OAuth credentials are stored in the macOS login Keychain. A requested workflow may save Google content or a derived output in a local project file or in private storage chosen by Duncan. The tool does not sell Google data, use it for advertising, or make it available to the public.</p>
+
+      <h2>Control and support</h2>
+      <p>Duncan can stop using the tool, delete its local credentials and outputs, or <a href="https://myaccount.google.com/connections">revoke its Google access</a> at any time. Questions can be sent to <a href="mailto:dmbwebb@gmail.com">dmbwebb@gmail.com</a>.</p>
+
+      <footer class="footer">
+        <a href="./privacy/">Privacy policy</a> · <a href="./terms/">Terms of use</a> · <a href="/">Academic website</a>
+      </footer>
+    </main>
+  </body>
+</html>
