@@ -152,7 +152,7 @@ function App() {
           <p className="hero__bio">
             I am a development economist who uses tools and insights from
             behavioural economics. My current projects focus on{' '}
-            social change, gender, and <strong>human capital</strong>.
+            social change, gender, and human capital.
           </p>
           <p className="hero__bio">
             I'm an Assistant Professor of Economics at{' '}
