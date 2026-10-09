@@ -2,6 +2,10 @@ import { describe, it, expect } from 'vitest'
 import { fireEvent, render, screen, within } from '@testing-library/react'
 import App from '../App'
 
+function silencePaper() {
+  return screen.getByRole('link', { name: /silence to solidarity/i }).closest('.paper')
+}
+
 describe('App renders all sections', () => {
   it('renders the name heading', () => {
     render(<App />)
@@ -100,15 +104,25 @@ describe('Working papers', () => {
     expect(screen.getByRole('link', { name: 'Lester Lusher' })).toHaveAttribute('href', 'https://www.econ.pitt.edu/people/lester-lusher')
   })
 
-  it('renders Silence to Solidarity', () => {
+  it('renders Silence to Solidarity linking to the published JPE article', () => {
     render(<App />)
     const link = screen.getByRole('link', { name: /silence to solidarity/i })
-    expect(link).toHaveAttribute('href', '/papers/WebbSilenceSolidarity.pdf')
+    expect(link).toHaveAttribute('href', 'https://www.journals.uchicago.edu/doi/10.1086/742724')
   })
 
   it('renders JPE venue', () => {
     render(<App />)
-    expect(screen.getByText(/accepted, journal of political economy/i)).toBeInTheDocument()
+    expect(screen.getByText(/^journal of political economy, 2026$/i)).toBeInTheDocument()
+  })
+
+  it('offers an ungated Silence to Solidarity PDF under More', () => {
+    render(<App />)
+    const paper = silencePaper()
+    fireEvent.click(within(paper).getByRole('button', { name: /^more$/i }))
+    expect(within(paper).getByRole('link', { name: /^ungated$/i })).toHaveAttribute(
+      'href',
+      '/papers/WebbSilenceSolidarity.pdf',
+    )
   })
 
   it('renders NEUDC award', () => {
@@ -152,7 +166,7 @@ describe('Paper expandable links', () => {
     expect(screen.queryByRole('link', { name: /questionnaires/i })).not.toBeInTheDocument()
     expect(screen.queryByRole('link', { name: /voxdev/i })).not.toBeInTheDocument()
 
-    fireEvent.click(screen.getAllByRole('button', { name: /^more$/i })[0])
+    fireEvent.click(within(silencePaper()).getByRole('button', { name: /^more$/i }))
 
     expect(screen.getByRole('link', { name: /questionnaires/i })).toHaveAttribute(
       'href',
@@ -166,8 +180,9 @@ describe('Paper expandable links', () => {
 
   it('closes More when Abstract is opened on the same paper', () => {
     render(<App />)
-    const abstractButton = screen.getAllByRole('button', { name: /^abstract$/i })[0]
-    const moreButton = screen.getAllByRole('button', { name: /^more$/i })[0]
+    const paper = silencePaper()
+    const abstractButton = within(paper).getByRole('button', { name: /^abstract$/i })
+    const moreButton = within(paper).getByRole('button', { name: /^more$/i })
 
     fireEvent.click(moreButton)
     expect(moreButton).toHaveAttribute('aria-expanded', 'true')

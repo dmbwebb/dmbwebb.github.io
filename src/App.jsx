@@ -181,29 +181,6 @@ function App() {
         <h3 className="section__subtitle">Working Papers</h3>
 
         <Paper
-          title="Silence to Solidarity: How Communication About a Minority Affects Discrimination"
-          href="/papers/WebbSilenceSolidarity.pdf"
-          venue="Accepted, Journal of Political Economy"
-          award="Winner of Weiss NEUDC Distinguished Paper 2023"
-          abstract="People predominantly talk within their identity groups. Conversations between majority-group members may therefore be crucial in shaping discrimination against minorities. In an experiment in India (N=3,397), non-transgender participants strongly discriminate against transgender workers when hiring for a grocery delivery, but a discussion with two non-transgender neighbors eliminates this discrimination in private post-discussion choices. The discussion is 1.7x more effective at reducing discrimination than information about transgender people's legal rights, and effects partially persist after 1 month. The evidence is consistent with norm-based persuasion, in which pro-transgender participants are more vocal and create a perceived anti-discriminatory norm that reduces subsequent discrimination."
-          links={[
-            { label: 'Questionnaires', href: '/papers/WebbSilenceSolidaritySurveyMaterials.zip' },
-            { label: 'Archived Analyses', href: '/papers/WebbSilenceSolidarityArchived.pdf' },
-            { label: 'Replication Package', href: 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/UC27B9' },
-          ]}
-          coverage={[
-            { label: 'VoxDev', href: 'https://voxdev.org/topic/institutions-political-economy/can-conversations-about-minority-reduce-discrimination' },
-            { label: 'VoxTalks Economics', href: 'https://cepr.org/multimedia/next-generation-research' },
-            { label: 'Ideas of India Podcast', href: 'https://www.mercatus.org/ideasofindia/duncan-webb-reducing-anti-transgender-discrimination-india' },
-            { label: 'World Bank', href: 'https://blogs.worldbank.org/en/impactevaluations/can-conversations-between-discriminators-lead-less-discrimination-evidence-anti' },
-            { label: 'Ideas for India', href: 'https://www.ideasforindia.in/topics/social-identity/can-conversations-about-minorities-reduce-discrimination-evidence-from-anti-transgender-discrimination-in-chennai.html' },
-            { label: 'NewsLaundry', href: 'https://www.newslaundry.com/2025/02/28/miles-to-go-before-we-sleep-the-long-road-to-leadership-for-lgbtqia-professionals' },
-            { label: 'JPAL Summary', href: 'https://www.povertyactionlab.org/evaluation/impact-group-discussion-hiring-discrimination-against-transgender-workers-india' },
-            { label: 'Público', href: 'https://www.publico.pt/2026/04/30/p3/noticia/pos-vizinhos-conversar-pessoas-trans-india-diminuiu-preconceito-2172839' },
-          ]}
-        />
-
-        <Paper
           title="Menstrual Stigma, Hygiene, and Human Capital: Experimental Evidence from Madagascar"
           href="/papers/MacoursVeraRuedaWebb_MenstrualStigmaHygieneMadagascar.pdf"
           authors={<>with <a href="https://www.parisschoolofeconomics.eu/en/persons/karen-macours/" target="_blank" rel="noopener noreferrer">Karen Macours</a> and <a href="https://sites.google.com/view/julieta-vera-rueda/" target="_blank" rel="noopener noreferrer">Julieta Vera Rueda</a></>}
@@ -232,6 +209,30 @@ function App() {
         />
 
         <h3 className="section__subtitle">Publications</h3>
+
+        <Paper
+          title="Silence to Solidarity: How Communication About a Minority Affects Discrimination"
+          href="https://www.journals.uchicago.edu/doi/10.1086/742724"
+          venue="Journal of Political Economy, 2026"
+          award="Winner of Weiss NEUDC Distinguished Paper 2023"
+          abstract="People predominantly talk within their identity groups. Conversations between majority-group members may therefore be crucial in shaping discrimination against minorities. In an experiment in India (N=3,397), non-transgender participants strongly discriminate against transgender workers when hiring for a grocery delivery, but a discussion with two non-transgender neighbors eliminates this discrimination in private post-discussion choices. The discussion is 1.7x more effective at reducing discrimination than information about transgender people's legal rights, and effects partially persist after 1 month. The evidence is consistent with norm-based persuasion, in which pro-transgender participants are more vocal and create a perceived anti-discriminatory norm that reduces subsequent discrimination."
+          links={[
+            { label: 'Ungated', href: '/papers/WebbSilenceSolidarity.pdf' },
+            { label: 'Questionnaires', href: '/papers/WebbSilenceSolidaritySurveyMaterials.zip' },
+            { label: 'Archived Analyses', href: '/papers/WebbSilenceSolidarityArchived.pdf' },
+            { label: 'Replication Package', href: 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/UC27B9' },
+          ]}
+          coverage={[
+            { label: 'VoxDev', href: 'https://voxdev.org/topic/institutions-political-economy/can-conversations-about-minority-reduce-discrimination' },
+            { label: 'VoxTalks Economics', href: 'https://cepr.org/multimedia/next-generation-research' },
+            { label: 'Ideas of India Podcast', href: 'https://www.mercatus.org/ideasofindia/duncan-webb-reducing-anti-transgender-discrimination-india' },
+            { label: 'World Bank', href: 'https://blogs.worldbank.org/en/impactevaluations/can-conversations-between-discriminators-lead-less-discrimination-evidence-anti' },
+            { label: 'Ideas for India', href: 'https://www.ideasforindia.in/topics/social-identity/can-conversations-about-minorities-reduce-discrimination-evidence-from-anti-transgender-discrimination-in-chennai.html' },
+            { label: 'NewsLaundry', href: 'https://www.newslaundry.com/2025/02/28/miles-to-go-before-we-sleep-the-long-road-to-leadership-for-lgbtqia-professionals' },
+            { label: 'JPAL Summary', href: 'https://www.povertyactionlab.org/evaluation/impact-group-discussion-hiring-discrimination-against-transgender-workers-india' },
+            { label: 'Público', href: 'https://www.publico.pt/2026/04/30/p3/noticia/pos-vizinhos-conversar-pessoas-trans-india-diminuiu-preconceito-2172839' },
+          ]}
+        />
 
         <Paper
           title="Critical Periods in Cognitive and Socioemotional Development: Evidence from Weather Shocks in Indonesia"
