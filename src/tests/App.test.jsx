@@ -104,10 +104,10 @@ describe('Working papers', () => {
     expect(screen.getByRole('link', { name: 'Lester Lusher' })).toHaveAttribute('href', 'https://www.econ.pitt.edu/people/lester-lusher')
   })
 
-  it('renders Silence to Solidarity linking to the published JPE article', () => {
+  it('renders Silence to Solidarity linking to the ungated PDF', () => {
     render(<App />)
     const link = screen.getByRole('link', { name: /silence to solidarity/i })
-    expect(link).toHaveAttribute('href', 'https://www.journals.uchicago.edu/doi/10.1086/742724')
+    expect(link).toHaveAttribute('href', '/papers/WebbSilenceSolidarity.pdf')
   })
 
   it('renders JPE venue', () => {
@@ -115,13 +115,13 @@ describe('Working papers', () => {
     expect(screen.getByText(/^journal of political economy, 2026$/i)).toBeInTheDocument()
   })
 
-  it('offers an ungated Silence to Solidarity PDF under More', () => {
+  it('offers the JPE article link under More', () => {
     render(<App />)
     const paper = silencePaper()
     fireEvent.click(within(paper).getByRole('button', { name: /^more$/i }))
-    expect(within(paper).getByRole('link', { name: /^ungated$/i })).toHaveAttribute(
+    expect(within(paper).getByRole('link', { name: /^jpe$/i })).toHaveAttribute(
       'href',
-      '/papers/WebbSilenceSolidarity.pdf',
+      'https://www.journals.uchicago.edu/doi/10.1086/742724',
     )
   })
 
