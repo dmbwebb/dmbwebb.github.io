@@ -42,6 +42,11 @@ Always test extensively before committing:
 - `public/CNAME` — Custom domain config
 - `.github/workflows/deploy.yml` — **Deleted**. Cannot be pushed (PAT lacks `workflow` scope). Deploy via `npm run deploy` only.
 
+## Paper entries
+
+- When a paper is published, move it from Working Papers to Publications with venue `Journal, Year`. Keep the title linked to the ungated PDF in `public/papers/` and put the journal article (DOI link) under More with the journal's short name as label (Duncan's preference, 2026-10-09; the older Economic Journal entry still uses the reverse).
+- Tests in `src/tests/App.test.jsx` select a paper by its title link (`.closest('.paper')`), not by button index, so reordering papers doesn't break them.
+
 ## Deployment
 
 After running `npm run deploy`, always verify the live site in Chrome (via Claude-in-Chrome) by navigating to `www.duncan-webb.com` and confirming the changed text is visible. If the Chrome extension won't connect, headless Playwright (`~/.venvs/lifecoach/bin/python` has it + chromium) is an acceptable fallback: load the live URL, assert on the DOM/network requests, and poll the CDN with `until curl -s "https://www.duncan-webb.com/?cb=$(date +%s)" | grep -q "<marker>"; do sleep 5; done` before checking. GitHub Pages CDN can take 1–5 min to propagate. Verification protocol:
