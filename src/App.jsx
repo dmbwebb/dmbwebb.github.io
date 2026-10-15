@@ -178,36 +178,6 @@ function App() {
       <section className="section" id="research">
         <h2 className="section__title">Research</h2>
 
-        <h3 className="section__subtitle">Working Papers</h3>
-
-        <Paper
-          title="Menstrual Stigma, Hygiene, and Human Capital: Experimental Evidence from Madagascar"
-          href="/papers/MacoursVeraRuedaWebb_MenstrualStigmaHygieneMadagascar.pdf"
-          authors={<>with <a href="https://www.parisschoolofeconomics.eu/en/persons/karen-macours/" target="_blank" rel="noopener noreferrer">Karen Macours</a> and <a href="https://sites.google.com/view/julieta-vera-rueda/" target="_blank" rel="noopener noreferrer">Julieta Vera Rueda</a></>}
-          venue="CEPR Discussion Paper 21167, 2026"
-          venueRegular
-          abstract={`Menstrual stigma is pervasive in low- and middle-income countries, yet we know little about its consequences for girls\u2019 human capital. In a field experiment in 140 schools in Madagascar (N=2,256), we evaluate a school hygiene program focused on reducing menstrual stigma through sanitation infrastructure, menstrual products, and teacher- and peer-led sensitization. The program generates substantial learning gains (0.15 SD) without improving attendance or health. The learning gains are instead explained by psychosocial mechanisms: reduced stigma, lower stress measured by heart rate, and a better school social climate. Our results suggest that menstruation can be a meaningful barrier to girls\u2019 learning.`}
-          links={[
-            { label: 'JPAL Summary', href: 'https://www.povertyactionlab.org/evaluation/addressing-menstrual-stigma-and-hygiene-improve-education-and-psychosocial-well-being' },
-            { label: 'FID', href: 'https://fundinnovation.dev/news/ameliorer-les-apprentissages-a-travers-une-approche-combinee-d-interventions-sur-l-hygiene-menstruelle' },
-            { label: 'FID Video', href: 'https://www.youtube.com/watch?v=saK1-5y5FpU' },
-            { label: 'VoxDev', href: 'https://voxdev.org/topic/health/improving-hygiene-reducing-menstrual-stigma-and-boosting-learning-schools' },
-            { label: 'CEPR', href: 'https://cepr.org/publications/dp21167' },
-          ]}
-        />
-
-        <Paper
-          title="Psychological Mechanisms for Measuring Preferences and Beliefs"
-          href="/papers/FriedmanOhWebbPsychMechs.pdf"
-          authors={<>with <a href="https://www.evankfriedman.com/" target="_blank" rel="noopener noreferrer">Evan Friedman</a> and <a href="https://www.suannaoh.com/" target="_blank" rel="noopener noreferrer">Suanna Oh</a></>}
-          abstract="Accurately measuring preferences and beliefs in surveys is crucial for social science research, but standard monetary incentives cannot be used when responses cannot be verified. We study two psychological mechanisms for improving answer quality that can be applied to unverifiable questions: (i) an unexpected bonus payment designed to trigger reciprocity towards the researcher, and (ii) telling respondents that they will later be paid to accurately restate their previously-given answers, which could motivate careful initial answers that are naturally easier to reconstruct. In a large online experiment (N=2,428), the bonus method improves both answer correctness and consistency, and does so more effectively than dropping participants who fail an attention check. This effect is driven by increased effort and reciprocity. The restatement method, however, does not consistently improve answer quality, primarily because participants exert effort trying to memorize their answers instead of answering carefully. These results demonstrate the potential and limitations of using psychological mechanisms to improve the quality of survey responses."
-          links={[
-            { label: 'CESifo WP', href: 'https://www.ifo.de/sites/default/files/docbase/docs/cesifo1_wp11859.pdf' },
-            { label: 'Questionnaire', href: '/papers/PsychMechs_Questionnaire.pdf' },
-            { label: 'Questionnaire, Experiment 2', href: '/papers/PsychMechs_Questionnaire_Exp2.pdf' },
-          ]}
-        />
-
         <h3 className="section__subtitle">Publications</h3>
 
         <Paper
@@ -269,6 +239,36 @@ function App() {
             { label: 'Blu', href: 'https://www.bluradio.com/especiales/coronavirus/estudio-revela-alta-afectacion-del-covid-19-en-los-estratos-mas-bajos-de-bogota' },
           ]}
         />
+        <h3 className="section__subtitle">Working Papers</h3>
+
+        <Paper
+          title="Menstrual Stigma, Hygiene, and Human Capital: Experimental Evidence from Madagascar"
+          href="/papers/MacoursVeraRuedaWebb_MenstrualStigmaHygieneMadagascar.pdf"
+          authors={<>with <a href="https://www.parisschoolofeconomics.eu/en/persons/karen-macours/" target="_blank" rel="noopener noreferrer">Karen Macours</a> and <a href="https://sites.google.com/view/julieta-vera-rueda/" target="_blank" rel="noopener noreferrer">Julieta Vera Rueda</a></>}
+          venue="CEPR Discussion Paper 21167, 2026"
+          venueRegular
+          abstract={`Menstrual stigma is pervasive in low- and middle-income countries, yet we know little about its consequences for girls\u2019 human capital. In a field experiment in 140 schools in Madagascar (N=2,256), we evaluate a school hygiene program focused on reducing menstrual stigma through sanitation infrastructure, menstrual products, and teacher- and peer-led sensitization. The program generates substantial learning gains (0.15 SD) without improving attendance or health. The learning gains are instead explained by psychosocial mechanisms: reduced stigma, lower stress measured by heart rate, and a better school social climate. Our results suggest that menstruation can be a meaningful barrier to girls\u2019 learning.`}
+          links={[
+            { label: 'JPAL Summary', href: 'https://www.povertyactionlab.org/evaluation/addressing-menstrual-stigma-and-hygiene-improve-education-and-psychosocial-well-being' },
+            { label: 'FID', href: 'https://fundinnovation.dev/news/ameliorer-les-apprentissages-a-travers-une-approche-combinee-d-interventions-sur-l-hygiene-menstruelle' },
+            { label: 'FID Video', href: 'https://www.youtube.com/watch?v=saK1-5y5FpU' },
+            { label: 'VoxDev', href: 'https://voxdev.org/topic/health/improving-hygiene-reducing-menstrual-stigma-and-boosting-learning-schools' },
+            { label: 'CEPR', href: 'https://cepr.org/publications/dp21167' },
+          ]}
+        />
+
+        <Paper
+          title="Psychological Mechanisms for Measuring Preferences and Beliefs"
+          href="/papers/FriedmanOhWebbPsychMechs.pdf"
+          authors={<>with <a href="https://www.evankfriedman.com/" target="_blank" rel="noopener noreferrer">Evan Friedman</a> and <a href="https://www.suannaoh.com/" target="_blank" rel="noopener noreferrer">Suanna Oh</a></>}
+          abstract="Accurately measuring preferences and beliefs in surveys is crucial for social science research, but standard monetary incentives cannot be used when responses cannot be verified. We study two psychological mechanisms for improving answer quality that can be applied to unverifiable questions: (i) an unexpected bonus payment designed to trigger reciprocity towards the researcher, and (ii) telling respondents that they will later be paid to accurately restate their previously-given answers, which could motivate careful initial answers that are naturally easier to reconstruct. In a large online experiment (N=2,428), the bonus method improves both answer correctness and consistency, and does so more effectively than dropping participants who fail an attention check. This effect is driven by increased effort and reciprocity. The restatement method, however, does not consistently improve answer quality, primarily because participants exert effort trying to memorize their answers instead of answering carefully. These results demonstrate the potential and limitations of using psychological mechanisms to improve the quality of survey responses."
+          links={[
+            { label: 'CESifo WP', href: 'https://www.ifo.de/sites/default/files/docbase/docs/cesifo1_wp11859.pdf' },
+            { label: 'Questionnaire', href: '/papers/PsychMechs_Questionnaire.pdf' },
+            { label: 'Questionnaire, Experiment 2', href: '/papers/PsychMechs_Questionnaire_Exp2.pdf' },
+          ]}
+        />
+
         <h3 className="section__subtitle">Selected Work in Progress</h3>
 
         <Paper
