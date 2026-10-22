@@ -4,6 +4,8 @@ Personal academic website for Duncan Webb, built with React/Vite, deployed to Gi
 
 ## Development
 
+Use a patched Node release matching `package.json` (the `.node-version` default is 22.23.4) and npm 12.0.2 or newer. npm 10.9.9 crashes resolving Vitest 4 optional peers. The October 2026 dependency audit and the remaining deployment-only advisory are recorded in [SECURITY.md](SECURITY.md).
+
 ```bash
 npm run dev      # Dev server at localhost:5173
 npm run build    # Production build to dist/
