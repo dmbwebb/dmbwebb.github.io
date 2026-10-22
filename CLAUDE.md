@@ -72,6 +72,7 @@ Responsive overrides for `.hero__title` (1.7rem @ 768px, 1.4rem @ 480px) and `.s
 
 - The Madagascar K1 paper's canonical source is `~/Dropbox/Apps/Overleaf/Mada Paper/main_mada.tex`. Before publishing `main_mada.pdf`, confirm `latexmk -pdf main_mada.tex` reports it up to date, then synchronize the website title and abstract with the manuscript.
 - The public Madagascar download is `public/papers/MacoursVeraRuedaWebb_MenstrualStigmaHygieneMadagascar.pdf`. Keep `public/papers/StigmaHygieneMadagascar.pdf` byte-identical as a legacy alias for existing links.
+- The Silence to Solidarity title links the final JPE PDF `public/papers/Webb2026_SilenceToSolidarity_JPE.pdf`. Keep `public/papers/WebbSilenceSolidarity.pdf` (the old working-paper URL, linked from the CV) byte-identical as a legacy alias.
 
 - Co-author links added (Laajaj, Macours, Vera Rueda, Friedman, Suanna Oh) — check `src/App.jsx` before adding new ones to avoid duplicates.
 - A PNG version of the D favicon lives in `public/assets/` for use on the Google Sites mirror — Google Sites does not accept `.ico` files.

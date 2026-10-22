@@ -104,10 +104,10 @@ describe('Working papers', () => {
     expect(screen.getByRole('link', { name: 'Lester Lusher' })).toHaveAttribute('href', 'https://www.econ.pitt.edu/people/lester-lusher')
   })
 
-  it('renders Silence to Solidarity linking to the ungated PDF', () => {
+  it('renders Silence to Solidarity linking to the published JPE PDF', () => {
     render(<App />)
     const link = screen.getByRole('link', { name: /silence to solidarity/i })
-    expect(link).toHaveAttribute('href', '/papers/WebbSilenceSolidarity.pdf')
+    expect(link).toHaveAttribute('href', '/papers/Webb2026_SilenceToSolidarity_JPE.pdf')
   })
 
   it('renders JPE venue', () => {

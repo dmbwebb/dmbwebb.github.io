@@ -182,7 +182,7 @@ function App() {
 
         <Paper
           title="Silence to Solidarity: How Communication About a Minority Affects Discrimination"
-          href="/papers/WebbSilenceSolidarity.pdf"
+          href="/papers/Webb2026_SilenceToSolidarity_JPE.pdf"
           venue="Journal of Political Economy, 2026"
           award="Winner of Weiss NEUDC Distinguished Paper 2023"
           abstract="People predominantly talk within their identity groups. Conversations between majority-group members may therefore be crucial in shaping discrimination against minorities. In an experiment in India (N=3,397), non-transgender participants strongly discriminate against transgender workers when hiring for a grocery delivery, but a discussion with two non-transgender neighbors eliminates this discrimination in private post-discussion choices. The discussion is 1.7x more effective at reducing discrimination than information about transgender people's legal rights, and effects partially persist after 1 month. The evidence is consistent with norm-based persuasion, in which pro-transgender participants are more vocal and create a perceived anti-discriminatory norm that reduces subsequent discrimination."
