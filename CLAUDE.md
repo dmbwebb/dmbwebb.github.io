@@ -47,6 +47,7 @@ Always test extensively before committing:
 ## Paper entries
 
 - When a paper is published, move it from Working Papers to Publications with venue `Journal, Year`. Keep the title linked to the ungated PDF in `public/papers/` and put the journal article (DOI link) under More with the journal's short name as label (Duncan's preference, 2026-10-09; the older Economic Journal entry still uses the reverse). Once Duncan supplies the final publisher PDF, the title links to it under a descriptive name (`Webb2026_<ShortTitle>_<Journal>.pdf`) and the old manuscript filename is overwritten with the same bytes as a legacy alias, so CV and external links get the final version.
+- "Make paper X's title up to date" means the title may already match the site; take the current title from the manuscript's `\title` in the project working directory (`project_mappings.yaml`), then update both `src/App.jsx` and `~/Dropbox/Dropbox/CVs/cv_academic.tex` (rebuild and copy the CV PDF). Other CV variants (`cv_coefficient.tex`, dated 2-page) carry the same entries; ask before changing them.
 - Tests in `src/tests/App.test.jsx` select a paper by its title link (`.closest('.paper')`), not by button index, so reordering papers doesn't break them.
 
 ## Deployment
