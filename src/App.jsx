@@ -292,7 +292,7 @@ function App() {
         />
 
         <Paper
-          title="How Persistent Are the Impacts of Global Education and Health Interventions? Evidence from 1513 Meta-Analyses"
+          title="Treatment-Effect Persistence and Policy Comparisons: Evidence from 4,051 Meta-Analyses"
           authors={<>with <a href="https://evavivalt.com/" target="_blank" rel="noopener noreferrer">Eva Vivalt</a></>}
         />
       </section>
