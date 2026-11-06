@@ -22,7 +22,7 @@ npm run deploy   # Build + deploy to gh-pages branch
 GoatCounter (account `dmbwebb`, dashboard at https://dmbwebb.goatcounter.com; no cookies, so no consent banner). Two pieces:
 - **Pageviews**: `count.js` snippet in `index.html` (`data-goatcounter="https://dmbwebb.goatcounter.com/count"`). Ignores localhost automatically.
 - **Click events**: `src/analytics.js` — one delegated document-level listener (init'd in `main.jsx`), no per-link attributes needed. Event naming: `/papers/*` → `download/<file>`, `mailto:` → `contact/email`, external → `ext/<hostname>`; in-page `#` anchors ignored. Tests in `src/tests/analytics.test.jsx`.
-- **Pulling stats**: read-only API key is `secretctl get goatcounter.api-key` (created at https://dmbwebb.goatcounter.com/user/api, not under site Settings). `analytics/pull_visitors.py` writes daily visitors to CSV and `analytics/plot_visitors.R` charts them. API `/api/v0/stats/{total,hits,toprefs,locations}` take `start`/`end` dates, and `end` is exclusive (pass tomorrow to include today).
+- **Pulling stats**: read-only API key is `secretctl get goatcounter.api-key` (created at https://dmbwebb.goatcounter.com/user/api, not under site Settings). `analytics/pull_visitors.py` writes daily visitors to CSV and `analytics/plot_visitors.R` charts them. Findings (monthly totals, explained spikes) go in a dated section of `analytics/visitor_notes.md`. API `/api/v0/stats/{total,hits,toprefs,locations}` take `start`/`end` dates, and `end` is exclusive (pass tomorrow to include today).
 
 ## Testing
 
