@@ -134,7 +134,7 @@ describe('Working papers', () => {
     render(<App />)
     const link = screen.getByRole('link', { name: /menstrual stigma/i })
     expect(link).toHaveAttribute('href', '/papers/MacoursVeraRuedaWebb_MenstrualStigmaHygieneMadagascar.pdf')
-    expect(screen.getByText('CEPR Discussion Paper 21167, 2026')).toHaveClass('paper__venue--regular')
+    expect(screen.getByText('Revise and Resubmit, American Economic Review')).toHaveClass('paper__venue')
 
     const paper = link.closest('.paper')
     fireEvent.click(within(paper).getByRole('button', { name: /^more$/i }))
